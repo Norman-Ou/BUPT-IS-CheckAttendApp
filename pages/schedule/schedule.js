@@ -1,0 +1,347 @@
+// schedule.js
+const API = 'https://zoo-chance-acquired-finally.trycloudflare.com'
+
+const { hmacSha1Base64 } = require('../../utils/hmac_sha1')
+const OSS_BUCKET     = 'us-aisocial'
+const OSS_ENDPOINT   = 'oss-accelerate.aliyuncs.com'
+const OSS_PREFIX     = 'imggen_ugc/as-loki/home/ruizhe.ou/as-loki/attend/'
+const OSS_KEY_ID     = 'LTAI5t7DphPf4SZvQkBTdKEv'
+const OSS_KEY_SECRET = 'TUOdiCczRZ1WlqKpDPcLmib8mO6mlg'
+
+function ossUpload(filePath, objectKey) {
+  return new Promise((resolve, reject) => {
+    wx.getFileSystemManager().readFile({
+      filePath,
+      success: ({ data: fileData }) => {
+        const date = new Date().toUTCString()
+        const contentType = 'image/jpeg'
+        const stringToSign = `PUT\n\n${contentType}\n${date}\n/${OSS_BUCKET}/${objectKey}`
+        const sig = hmacSha1Base64(OSS_KEY_SECRET, stringToSign)
+        wx.request({
+          url: `https://${OSS_BUCKET}.${OSS_ENDPOINT}/${objectKey}`,
+          method: 'PUT',
+          data: fileData,
+          header: {
+            'Content-Type': contentType,
+            'Date': date,
+            'Authorization': `OSS ${OSS_KEY_ID}:${sig}`,
+          },
+          success: res => (res.statusCode === 200 ? resolve(res) : reject(res)),
+          fail: reject,
+        })
+      },
+      fail: reject,
+    })
+  })
+}
+
+// ── Helpers ────────────────────────────────────────────────────────
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+function dateKey(d) {
+  const [day, mon] = d.split('-')
+  return MONTHS.indexOf(mon) * 100 + parseInt(day)
+}
+
+function getTodayStr() {
+  const now = new Date()
+  return `${now.getDate()}-${MONTHS[now.getMonth()]}`
+}
+
+const TIME_ORDER = [
+  '08:00-09:35','09:50-11:25','11:30-12:15',
+  '13:00-14:35','13:50-14:35',
+  '14:45-16:25','16:35-17:20','16:35-18:10',
+  '17:25-18:10','18:30-19:15',
+]
+
+function timeToMins(t) {
+  const [h, m] = t.split(':').map(Number)
+  return h * 60 + m
+}
+
+function parseSlot(slot) {
+  const dash = slot.lastIndexOf('-')
+  return { start: timeToMins(slot.slice(0, dash)), end: timeToMins(slot.slice(dash + 1)) }
+}
+
+function getScrollTargetIdx(classes) {
+  if (!classes.length) return 0
+  const cur = new Date().getHours() * 60 + new Date().getMinutes()
+  const times = [...new Set(classes.map(c => c.time))].sort((a, b) => {
+    const ai = TIME_ORDER.indexOf(a), bi = TIME_ORDER.indexOf(b)
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi)
+  })
+  for (const t of times) {
+    const { start, end } = parseSlot(t)
+    if (cur >= start && cur <= end) return classes.findIndex(c => c.time === t)
+  }
+  let target = times[0]
+  for (const t of times) {
+    if (parseSlot(t).start <= cur) target = t
+  }
+  return classes.findIndex(c => c.time === target)
+}
+
+// PATCH /records/{id}
+function apiPatch(id, data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${API}/records/${id}`,
+      method: 'PATCH',
+      data,
+      header: { 'Content-Type': 'application/json' },
+      success: res => (res.statusCode === 200 ? resolve(res.data) : reject(res)),
+      fail: reject,
+    })
+  })
+}
+
+// ── Page ───────────────────────────────────────────────────────────
+
+Page({
+  data: {
+    dateList: [],
+    dateRaw: [],
+    dateIndex: 0,
+    displayDate: '选择日期',
+    classes: [],
+    selectedIdx: -1,
+    selectedRecord: null,
+    hasResult: false,
+    scrollIntoView: '',
+    showInputModal: false,
+    inputCount: '',
+    showLoginModal: false,
+    inputName: '',
+    wechatId: '',
+  },
+
+  onLoad() {
+    const wechatId = getApp().globalData.wechatId || ''
+    this.setData({ wechatId, showLoginModal: !wechatId })
+    wx.showLoading({ title: '加载中...' })
+    wx.request({
+      url: `${API}/dates`,
+      method: 'GET',
+      success: res => {
+        const dateRaw = res.data
+          .sort((a, b) => dateKey(a.date) - dateKey(b.date))
+        const dateList = dateRaw.map(d => d.date)
+        const today = getTodayStr()
+        let dateIndex = dateRaw.findIndex(d => d.date === today)
+        if (dateIndex === -1) dateIndex = 0
+        const entry = dateRaw[dateIndex]
+        this.setData({
+          dateRaw, dateList, dateIndex,
+          displayDate: entry ? `${entry.date} ${entry.day}` : '选择日期',
+        })
+        wx.hideLoading()
+        if (entry) this.onQuery()
+      },
+      fail: err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '加载失败', icon: 'error' })
+      },
+    })
+  },
+
+  onDateChange(e) {
+    const dateIndex = parseInt(e.detail.value)
+    const entry = this.data.dateRaw[dateIndex]
+    this.setData({ dateIndex, displayDate: `${entry.date} ${entry.day}` })
+    this.onQuery()
+  },
+
+  _buildPhotoUrl(dateStr, timeStr, room) {
+    const [dd, monStr] = dateStr.split('-')
+    const mo = MONTHS.indexOf(monStr) + 1
+    const startStr = timeStr.slice(0, timeStr.lastIndexOf('-'))
+    const [hh, mm] = startStr.split(':')
+    const fileName = `${mo}.${dd}_${hh}.${mm}_${room}.jpg`
+    return `https://${OSS_BUCKET}.${OSS_ENDPOINT}/${OSS_PREFIX}${fileName}`
+  },
+
+  onQuery() {
+    const { dateRaw, dateIndex } = this.data
+    const date = dateRaw[dateIndex] && dateRaw[dateIndex].date
+    if (!date) return
+    wx.showLoading({ title: '加载中...' })
+    wx.request({
+      url: `${API}/records`,
+      method: 'GET',
+      data: { date },
+      success: res => {
+        wx.hideLoading()
+        const classes = res.data.map(r => ({
+          id: r.id,
+          index: r.indexNo,
+          time: r.time,
+          moduleCode: r.moduleCode,
+          module: r.moduleName,
+          lecturer: r.lecturer,
+          room: r.room,
+          remark: r.remark || '',
+          totalStudentNum: r.totalStudentNum,
+          studentNumInClassroom: r.studentNumInClassroom || 0,
+          percent: r.percent || 0,
+          by: r.by || '',
+          photoUrl: this._buildPhotoUrl(date, r.time, r.room),
+          hasPhoto: !!r.photoUploaded,
+        }))
+        const targetIdx = getScrollTargetIdx(classes)
+        this.setData({
+          classes,
+          selectedIdx: targetIdx,
+          selectedRecord: classes[targetIdx] || null,
+          hasResult: true,
+          scrollIntoView: `item-${targetIdx}`,
+        })
+      },
+      fail: err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '查询失败', icon: 'error' })
+      },
+    })
+  },
+
+  onPhotoLoad(e) {
+    const idx = e.currentTarget.dataset.idx
+    this.setData({ [`classes[${idx}].hasPhoto`]: true })
+  },
+
+  onPhotoError(e) {
+    const idx = e.currentTarget.dataset.idx
+    const rec = this.data.classes[idx]
+    console.log('[photoError] idx=', idx, 'id=', rec && rec.id)
+    const update = { [`classes[${idx}].hasPhoto`]: false }
+    if (this.data.selectedIdx === idx) {
+      update.selectedRecord = { ...this.data.selectedRecord, hasPhoto: false }
+    }
+    this.setData(update)
+    if (rec) {
+      apiPatch(rec.id, { photoUploaded: false })
+        .then(() => console.log('[photoError] DB updated ok'))
+        .catch(err => console.error('[photoError] DB update failed', err))
+    }
+  },
+
+  onSelectRow(e) {
+    const idx = e.currentTarget.dataset.idx
+    this.setData({ selectedIdx: idx, selectedRecord: this.data.classes[idx] })
+  },
+
+  onNameInput(e) {
+    this.setData({ inputName: e.detail.value })
+  },
+
+  onConfirmName() {
+    const name = this.data.inputName.trim()
+    if (name !== 'Ruizhe' && name !== 'Shuyue') {
+      wx.showToast({ title: '用户名不正确', icon: 'error' })
+      return
+    }
+    getApp().globalData.wechatId = name
+    wx.setStorageSync('wechatId', name)
+    this.setData({ wechatId: name, showLoginModal: false, inputName: '' })
+  },
+
+  onFillCount() {
+    if (!this.data.wechatId) {
+      wx.showToast({ title: '请先完成登录', icon: 'none' })
+      return
+    }
+    if (!this.data.selectedRecord) {
+      wx.showToast({ title: '请先选择一条记录', icon: 'none' })
+      return
+    }
+    this.setData({ showInputModal: true, inputCount: '' })
+  },
+
+  onCountInput(e) {
+    this.setData({ inputCount: e.detail.value })
+  },
+
+  onCancelInput() {
+    this.setData({ showInputModal: false, inputCount: '' })
+  },
+
+  onConfirmInput() {
+    const count = parseInt(this.data.inputCount)
+    if (isNaN(count) || count < 0) {
+      wx.showToast({ title: '请输入有效人数', icon: 'none' })
+      return
+    }
+    const rec = this.data.selectedRecord
+    const total = rec.totalStudentNum
+    const percent = total > 0 ? parseFloat((count / total * 100).toFixed(1)) : 0
+    const wechatId = this.data.wechatId
+    console.log('[PATCH]', rec.id, { studentNumInClassroom: count, percent, by: wechatId })
+    wx.showLoading({ title: '提交中...' })
+    apiPatch(rec.id, { studentNumInClassroom: count, percent, by: wechatId })
+      .then(() => {
+        wx.hideLoading()
+        const idx = this.data.selectedIdx
+        const classes = this.data.classes.map((c, i) =>
+          i === idx ? { ...c, studentNumInClassroom: count, percent, by: wechatId } : c
+        )
+        const selectedRecord = { ...rec, studentNumInClassroom: count, percent, by: wechatId }
+        this.setData({ classes, selectedRecord, showInputModal: false, inputCount: '' })
+        wx.showToast({ title: '提交成功', icon: 'success' })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '提交失败', icon: 'error' })
+      })
+  },
+
+  onUploadPhoto() {
+    if (!this.data.wechatId) {
+      wx.showToast({ title: '请先完成登录', icon: 'none' })
+      return
+    }
+    if (!this.data.selectedRecord) {
+      wx.showToast({ title: '请先选择一条记录', icon: 'none' })
+      return
+    }
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        const filePath = res.tempFiles[0].tempFilePath
+        const rec = this.data.selectedRecord
+        const dateStr = this.data.dateRaw[this.data.dateIndex].date
+        const [dd, monStr] = dateStr.split('-')
+        const mo = MONTHS.indexOf(monStr) + 1
+        const startStr = rec.time.slice(0, rec.time.lastIndexOf('-'))
+        const [hh, mm] = startStr.split(':')
+        const fileName = `${mo}.${dd}_${hh}.${mm}_${rec.room}.jpg`
+        wx.showLoading({ title: '上传中...' })
+        ossUpload(filePath, OSS_PREFIX + fileName)
+          .then(() => {
+            const idx = this.data.selectedIdx
+            const rec = this.data.classes[idx]
+            return apiPatch(rec.id, { photoUploaded: true }).then(() => idx)
+          })
+          .then(idx => {
+            wx.hideLoading()
+            const selectedRecord = { ...this.data.selectedRecord, hasPhoto: true }
+            this.setData({ [`classes[${idx}].hasPhoto`]: true, selectedRecord })
+            wx.showToast({ title: '上传成功', icon: 'success' })
+          })
+          .catch(err => {
+            wx.hideLoading()
+            console.error(err)
+            wx.showToast({ title: '上传失败', icon: 'error' })
+          })
+      },
+    })
+  },
+
+  noop() {},
+})

@@ -1,0 +1,121 @@
+<!--schedule.wxml-->
+<view class="page-wrap">
+
+  <!-- 顶部日期选择 + 头像 -->
+  <view class="action-bar">
+    <view class="picker-wrap">
+      <picker style="width:100%;display:block;" range="{{dateList}}" value="{{dateIndex}}" bindchange="onDateChange">
+        <view class="btn btn-red">
+          <text class="btn-text">{{displayDate}}</text>
+        </view>
+      </picker>
+    </view>
+    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onQuery">{{wechatId}}</view>
+  </view>
+
+  <!-- 信息展示区 -->
+  <view class="info-wrap">
+    <scroll-view
+      class="info-area"
+      scroll-y
+      type="list"
+      scroll-into-view="{{scrollIntoView}}"
+      scroll-with-animation
+    >
+      <block wx:if="{{hasResult}}">
+        <view
+          wx:for="{{classes}}"
+          wx:key="index"
+          id="item-{{index}}"
+          class="record-row {{selectedIdx === index ? 'row-selected' : ''}}"
+          bindtap="onSelectRow"
+          data-idx="{{index}}"
+        >
+          <view class="row-top">
+            <text class="row-index">{{item.index}}</text>
+            <text class="row-module">
+              <text class="row-code {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.moduleCode}}</text> {{item.module}}
+            </text>
+            <view wx:if="{{item.hasPhoto === true}}" class="photo-badge">已传图</view>
+          </view>
+          <view class="row-bottom">
+            <text class="row-time">{{item.time}}</text>
+            <text class="row-lecturer">{{item.lecturer}}</text>
+            <text class="row-room {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.room}}</text>
+            <view wx:if="{{item.by}}" class="row-operator">
+              <text class="row-filled">{{item.studentNumInClassroom}}/{{item.totalStudentNum}} {{item.percent}}%</text>
+            </view>
+          </view>
+          <!-- 隐藏的 image：仅当 DB 标记为已上传时发请求，检测图片是否被删除 -->
+          <image
+            wx:if="{{item.hasPhoto}}"
+            class="thumb-invisible"
+            src="{{item.photoUrl}}"
+            bindload="onPhotoLoad"
+            binderror="onPhotoError"
+            data-idx="{{index}}"
+          />
+        </view>
+      </block>
+
+      <view wx:else class="info-placeholder">
+        <text class="placeholder-text">信息展示</text>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="action-bar bottom-bar">
+    <view class="btn btn-gray">
+      <text class="btn-label">应到人数</text>
+      <text class="btn-num">{{selectedRecord ? selectedRecord.totalStudentNum : '-'}}</text>
+    </view>
+    <view class="btn btn-red {{selectedRecord && selectedRecord.by ? 'btn-done' : ''}}" bindtap="onFillCount">
+      <text class="btn-text">填写人数</text>
+    </view>
+    <view class="btn btn-red {{selectedRecord && selectedRecord.hasPhoto ? 'btn-done' : ''}}" bindtap="onUploadPhoto">
+      <text class="btn-text">上传照片</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 登录弹窗 -->
+<view wx:if="{{showLoginModal}}" class="modal-mask">
+  <view class="modal-box">
+    <text class="modal-title">请输入用户名</text>
+    <input
+      class="modal-input"
+      type="text"
+      placeholder="Ruizhe / Shuyue"
+      focus="{{showLoginModal}}"
+      bindinput="onNameInput"
+      value="{{inputName}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-confirm" bindtap="onConfirmName">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 填写人数弹窗 -->
+<view wx:if="{{showInputModal}}" class="modal-mask" bindtap="onCancelInput">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">填写实到人数</text>
+    <text class="modal-desc">{{selectedRecord.module}}</text>
+    <text class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人</text>
+    <input
+      class="modal-input"
+      type="number"
+      placeholder="请输入实到人数"
+      bindinput="onCountInput"
+      value="{{inputCount}}"
+      focus="{{showInputModal}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onCancelInput">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmInput">确认</view>
+    </view>
+  </view>
+</view>

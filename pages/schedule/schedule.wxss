@@ -1,0 +1,305 @@
+/* schedule.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  font-family: -apple-system, sans-serif;
+}
+
+.page-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Action bars ── */
+.action-bar {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 24rpx 24rpx 16rpx;
+  gap: 20rpx;
+}
+
+.bottom-bar {
+  padding: 16rpx 24rpx 32rpx;
+}
+
+/* ── Buttons ── */
+.picker-wrap {
+  flex: 1;
+}
+
+
+
+.nickname-chip {
+  min-height: 96rpx;
+  padding: 0 24rpx;
+  border-radius: 12rpx;
+  background: rgb(20, 53, 130);
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: 600;
+  flex-shrink: 0;
+  max-width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  min-height: 96rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12rpx;
+  padding: 16rpx 8rpx;
+  box-sizing: border-box;
+}
+
+.btn-red {
+  background: rgb(20, 53, 130);
+}
+
+.btn-done {
+  background: #8a9bbf;
+}
+
+.btn-gray {
+  background: #D9D9D9;
+}
+
+.btn-text {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.btn-label {
+  color: #555;
+  font-size: 24rpx;
+  margin-bottom: 6rpx;
+}
+
+.btn-num {
+  color: #222;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+/* ── Info area ── */
+.info-wrap {
+  flex: 1;
+  margin: 0 24rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16rpx;
+  background: #D9D9D9;
+}
+
+.info-area {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.info-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: #888;
+  font-size: 32rpx;
+}
+
+/* ── Record rows ── */
+.record-row {
+  background: #fff;
+  margin: 12rpx 16rpx;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  border: 3rpx solid transparent;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.06);
+}
+
+.photo-badge {
+  font-size: 20rpx;
+  color: #fff;
+  background: #2e9e5b;
+  border-radius: 20rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.thumb-invisible {
+  width: 1rpx;
+  height: 1rpx;
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.row-selected {
+  border-color: rgb(20, 53, 130);
+  background: #eef0f8;
+}
+
+.row-top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+
+.row-index {
+  font-size: 22rpx;
+  color: #aaa;
+  width: 56rpx;
+  flex-shrink: 0;
+  padding-top: 4rpx;
+}
+
+.row-module {
+  flex: 1;
+  font-size: 28rpx;
+  color: #222;
+  line-height: 1.4;
+}
+
+.row-code {
+  font-weight: 700;
+  color: rgb(56, 113, 224);
+}
+
+.tutorial {
+  color: #E87722;
+}
+
+.row-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 56rpx;
+  gap: 16rpx;
+}
+
+.row-time {
+  font-size: 22rpx;
+  color: #aaa;
+  margin-right: 8rpx;
+}
+
+.row-lecturer {
+  font-size: 24rpx;
+  color: #666;
+  background: #f0f0f0;
+  padding: 4rpx 14rpx;
+  border-radius: 20rpx;
+}
+
+.row-room {
+  font-size: 24rpx;
+  color: rgb(56, 113, 224);
+  font-weight: 600;
+}
+
+.row-operator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  gap: 8rpx;
+}
+
+
+.row-filled {
+  font-size: 22rpx;
+  color: #2e9e5b;
+}
+
+/* ── Modal ── */
+.modal-mask {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 48rpx 40rpx 36rpx;
+  width: 560rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 16rpx;
+}
+
+.modal-desc {
+  font-size: 26rpx;
+  color: #888;
+  margin-bottom: 6rpx;
+}
+
+.modal-input {
+  margin-top: 24rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  padding: 18rpx 24rpx;
+  font-size: 32rpx;
+  color: #222;
+  background: #fafafa;
+}
+
+.modal-btns {
+  display: flex;
+  flex-direction: row;
+  margin-top: 36rpx;
+  gap: 20rpx;
+}
+
+.modal-cancel {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: #f0f0f0;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.modal-confirm {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: rgb(20, 53, 130);
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}

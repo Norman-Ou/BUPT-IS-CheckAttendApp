@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/ouruizhe/miniconda3/envs/attend/bin/python3:*)"
+    ]
+  }
+}
