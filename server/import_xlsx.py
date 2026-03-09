@@ -13,7 +13,7 @@ import duckdb
 import pandas as pd
 from pathlib import Path
 
-XLSX_PATH = Path(__file__).parent.parent / 'attendance.xlsx'
+XLSX_PATH = Path(__file__).parent / 'attendance.xlsx'
 DB_PATH   = Path(__file__).parent / 'data' / 'attend.duckdb'
 
 

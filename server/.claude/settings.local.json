@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show:*)",
+      "Bash(/root/miniconda3/envs/wx/bin/python:*)",
+      "Bash(/root/miniconda3/envs/wx/bin/pip install:*)",
+      "Bash(chmod +x:*)"
+    ]
+  }
+}
