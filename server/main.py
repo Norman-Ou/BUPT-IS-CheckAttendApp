@@ -8,15 +8,33 @@ Runs on http://0.0.0.0:8000
 Use cloudflared to expose externally.
 """
 
+import logging
 import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
 import duckdb
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+CST = timezone(timedelta(hours=8))
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(str(Path(__file__).parent / 'data' / 'server.log'), encoding='utf-8'),
+    ],
+)
+logger = logging.getLogger('attend')
+
+
+def now() -> str:
+    return datetime.now(CST).strftime('%Y-%m-%d %H:%M:%S CST')
 
 DB_PATH = str(Path(__file__).parent / 'data' / 'attend.duckdb')
 
@@ -36,6 +54,14 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+
+@app.middleware('http')
+async def log_requests(request: Request, call_next):
+    client = request.client.host if request.client else 'unknown'
+    logger.info(f'[{now()}] {request.method} {request.url.path}{("?" + str(request.query_params)) if request.query_params else ""} from {client}')
+    response = await call_next(request)
+    return response
 
 
 # ── GET /dates ─────────────────────────────────────────────────────
@@ -77,11 +103,11 @@ def update_record(record_id: str, body: UpdateBody):
     sets   = ', '.join(f'"{k}"=?' for k in updates)
     values = list(updates.values()) + [record_id]
     sql = f'UPDATE attend SET {sets} WHERE id=?'
-    print(f'[PATCH] sql={sql} values={values}', flush=True)
+    logger.info(f'[{now()}] [PATCH] id={record_id} updates={updates}')
     con.execute(sql, values)
     # verify
     row = con.execute('SELECT id, "studentNumInClassroom", "by" FROM attend WHERE id=?', [record_id]).fetchone()
-    print(f'[PATCH] after update: {row}', flush=True)
+    logger.info(f'[{now()}] [PATCH] after update: {row}')
     return {'ok': True}
 
 

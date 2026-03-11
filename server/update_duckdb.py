@@ -5,24 +5,25 @@ Only rows with date >= cutoff are touched in the DB.
 Rows before the cutoff remain completely untouched.
 
 Usage:
-    python update_duckdb.py                              # default xlsx / cutoff
+    python update_duckdb.py                              # dry-run by default
+    python update_duckdb.py --update                     # actually write to DB
     python update_duckdb.py --xlsx /path/to/file.xlsx
     python update_duckdb.py --cutoff 2026-03-10          # change cutoff (inclusive)
     python update_duckdb.py --year 2026                  # year used to parse "D-Mon" dates
-    python update_duckdb.py --dry-run                    # preview without writing
 """
 
+import shutil
 import sys
 import argparse
 import duckdb
 import pandas as pd
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 
 DB_PATH      = Path(__file__).parent / 'data' / 'attend.duckdb'
-XLSX_DEFAULT = Path(__file__).parent / '2026-03-09-2255-export.xlsx'
+XLSX_DEFAULT = Path(__file__).parent / '2026-03-11-1026-export.xlsx'
 
-CUTOFF_DEFAULT = date(2026, 3, 10)   # inclusive
+CUTOFF_DEFAULT = (datetime.now(timezone(timedelta(hours=8))) + timedelta(days=1)).date()  # next day UTC+8
 YEAR_DEFAULT   = 2026
 
 
@@ -79,8 +80,8 @@ def parse_args():
                    help='Cutoff date YYYY-MM-DD (inclusive). Rows on/after are updated.')
     p.add_argument('--year',    type=int, default=YEAR_DEFAULT,
                    help='Year assumed when parsing "D-Mon" date strings (default: 2026)')
-    p.add_argument('--dry-run', action='store_true',
-                   help='Show what would change without writing to DB')
+    p.add_argument('--update', action='store_true',
+                   help='Actually write changes to DB (default is dry-run)')
     return p.parse_args()
 
 
@@ -196,11 +197,17 @@ def main():
     ]
     df_new = df_new[cols]
 
-    if args.dry_run:
+    if not args.update:
         print('\n[DRY RUN] Would upsert:')
         print(df_new[['id', 'date', 'day', 'time', 'moduleCode']].to_string(index=False))
-        print(f'\nTotal: {len(df_new)} rows — no changes written.')
+        print(f'\nTotal: {len(df_new)} rows — no changes written. Pass --update to apply.')
         return
+
+    # ── Backup DuckDB before writing ──────────────────────────────────────────
+    ts = datetime.now(timezone(timedelta(hours=8))).strftime('%Y%m%d-%H%M%S')
+    backup_path = DB_PATH.with_name(f'attend.duckdb.bak.{ts}')
+    shutil.copy2(DB_PATH, backup_path)
+    print(f'\nBackup saved: {backup_path}')
 
     # ── Write to DuckDB ───────────────────────────────────────────────────────
     con = duckdb.connect(str(DB_PATH))
