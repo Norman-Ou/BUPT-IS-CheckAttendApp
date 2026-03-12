@@ -4,7 +4,9 @@
       "Bash(pip show:*)",
       "Bash(/root/miniconda3/envs/wx/bin/python:*)",
       "Bash(/root/miniconda3/envs/wx/bin/pip install:*)",
-      "Bash(chmod +x:*)"
+      "Bash(chmod +x:*)",
+      "Bash(python3 -c \"\nimport duckdb\ncon = duckdb.connect\\('data/attend.duckdb'\\)\nprint\\('=== indexNo 127 on 12-Mar ==='\\)\ndf = con.execute\\(\\\\\"SELECT * FROM attend WHERE date='12-Mar' AND indexNo=127 ORDER BY id\\\\\"\\).df\\(\\)\nprint\\(df.to_string\\(\\)\\)\nprint\\(\\)\nprint\\('=== indexNo 141 on 12-Mar ==='\\)\ndf = con.execute\\(\\\\\"SELECT * FROM attend WHERE date='12-Mar' AND indexNo=141 ORDER BY id\\\\\"\\).df\\(\\)\nprint\\(df.to_string\\(\\)\\)\n\")",
+      "Bash(kill 1930759 && echo \"stopped\")"
     ]
   }
 }

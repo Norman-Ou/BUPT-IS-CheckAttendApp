@@ -198,8 +198,17 @@ def main():
     df_new = df_new[cols]
 
     if not args.update:
+        con_ro = duckdb.connect(str(DB_PATH), read_only=True)
+        con_ro.register('df_new', df_new)
+        existing_dry = con_ro.execute('''
+            SELECT COUNT(*) FROM attend a
+            JOIN df_new n ON a.date=n.date AND a.time=n.time AND a.room=n.room
+        ''').fetchone()[0]
+        con_ro.close()
         print('\n[DRY RUN] Would upsert:')
         print(df_new[['id', 'date', 'day', 'time', 'moduleCode']].to_string(index=False))
+        print(f'\n  Matched by (date,time,room) : {existing_dry} existing rows would be replaced')
+        print(f'  New rows to insert         : {len(df_new) - existing_dry}')
         print(f'\nTotal: {len(df_new)} rows — no changes written. Pass --update to apply.')
         return
 
@@ -212,19 +221,58 @@ def main():
     # ── Write to DuckDB ───────────────────────────────────────────────────────
     con = duckdb.connect(str(DB_PATH))
 
-    ids_str = ', '.join(f"'{i}'" for i in df_new['id'].tolist())
-    existing = con.execute(
-        f"SELECT COUNT(*) FROM attend WHERE id IN ({ids_str})"
-    ).fetchone()[0]
+    # Match by natural key (date, time, room) — stable across xlsx re-exports
+    # with different indexNo numbering.
+    con.register('df_new', df_new)
+
+    existing = con.execute('''
+        SELECT COUNT(*) FROM attend a
+        JOIN df_new n ON a.date=n.date AND a.time=n.time AND a.room=n.room
+    ''').fetchone()[0]
     new_inserts = len(df_new) - existing
 
     print(f'\n  Existing rows to overwrite : {existing}')
     print(f'  New rows to insert         : {new_inserts}')
 
-    con.register('df_new', df_new)
-
+    # Carry over mutable fields from DB into df_new where DB has real data
+    # (so filled attendance numbers are not lost when static fields are refreshed)
+    mutable = ['studentNumInClassroom', 'percent', 'by', 'photoUploaded']
     if existing:
-        con.execute(f"DELETE FROM attend WHERE id IN ({ids_str})")
+        db_mutable = con.execute('''
+            SELECT a.date, a.time, a.room,
+                   a.studentNumInClassroom, a.percent, a.by, a.photoUploaded
+            FROM attend a
+            JOIN df_new n ON a.date=n.date AND a.time=n.time AND a.room=n.room
+            WHERE a.studentNumInClassroom > 0 OR a.by != '' OR a.photoUploaded = true
+        ''').df()
+
+        if not db_mutable.empty:
+            df_new = df_new.merge(
+                db_mutable.rename(columns={c: f'_db_{c}' for c in mutable}),
+                on=['date', 'time', 'room'], how='left'
+            )
+            for col in mutable:
+                db_col = f'_db_{col}'
+                if db_col not in df_new.columns:
+                    continue
+                filled = df_new[db_col].notna()
+                if col == 'studentNumInClassroom':
+                    filled &= df_new[db_col] > 0
+                elif col == 'by':
+                    filled &= df_new[db_col] != ''
+                elif col == 'photoUploaded':
+                    filled &= df_new[db_col] == True
+                df_new.loc[filled, col] = df_new.loc[filled, db_col]
+                df_new.drop(columns=[db_col], inplace=True)
+            print(f'  Mutable data carried over  : {len(db_mutable)} rows')
+            con.unregister('df_new')
+            con.register('df_new', df_new)
+
+        con.execute('''
+            DELETE FROM attend WHERE (date, time, room) IN (
+                SELECT date, time, room FROM df_new
+            )
+        ''')
 
     con.execute("INSERT INTO attend SELECT * FROM df_new")
 

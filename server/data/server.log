@@ -1,0 +1,684 @@
+[2026-03-11 10:35:56 CST] GET /dates from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:35:57 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:36:01 CST] GET /records?date=16-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:36:03 CST] GET /records?date=13-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:39:15 CST] GET /records?date=12-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:39:18 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:39:22 CST] GET /records?date=10-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:39:28 CST] GET /records?date=9-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:39:42 CST] GET /records?date=10-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:37 CST] PATCH /records/97 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:37 CST] [PATCH] id=97 updates={'studentNumInClassroom': 24, 'percent': 16.0, 'by': 'Ruizhe'}
+[2026-03-11 10:40:37 CST] [PATCH] after update: ('97', 24, 'Ruizhe')
+[2026-03-11 10:40:42 CST] PATCH /records/98 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:42 CST] [PATCH] id=98 updates={'studentNumInClassroom': 27, 'percent': 18.0, 'by': 'Ruizhe'}
+[2026-03-11 10:40:42 CST] [PATCH] after update: ('98', 27, 'Ruizhe')
+[2026-03-11 10:40:46 CST] PATCH /records/99 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:46 CST] [PATCH] id=99 updates={'studentNumInClassroom': 7, 'percent': 7.0, 'by': 'Ruizhe'}
+[2026-03-11 10:40:46 CST] [PATCH] after update: ('99', 7, 'Ruizhe')
+[2026-03-11 10:40:50 CST] PATCH /records/100 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:50 CST] [PATCH] id=100 updates={'studentNumInClassroom': 19, 'percent': 19.0, 'by': 'Ruizhe'}
+[2026-03-11 10:40:50 CST] [PATCH] after update: ('100', 19, 'Ruizhe')
+[2026-03-11 10:40:57 CST] PATCH /records/101 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:40:57 CST] [PATCH] id=101 updates={'studentNumInClassroom': 27, 'percent': 15.0, 'by': 'Ruizhe'}
+[2026-03-11 10:40:57 CST] [PATCH] after update: ('101', 27, 'Ruizhe')
+[2026-03-11 10:41:11 CST] PATCH /records/104 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:11 CST] [PATCH] id=104 updates={'studentNumInClassroom': 17, 'percent': 9.4, 'by': 'Ruizhe'}
+[2026-03-11 10:41:11 CST] [PATCH] after update: ('104', 17, 'Ruizhe')
+[2026-03-11 10:41:14 CST] PATCH /records/102 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:14 CST] [PATCH] id=102 updates={'studentNumInClassroom': 6, 'percent': 6.0, 'by': 'Ruizhe'}
+[2026-03-11 10:41:14 CST] [PATCH] after update: ('102', 6, 'Ruizhe')
+[2026-03-11 10:41:17 CST] PATCH /records/103 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:17 CST] [PATCH] id=103 updates={'studentNumInClassroom': 17, 'percent': 17.0, 'by': 'Ruizhe'}
+[2026-03-11 10:41:17 CST] [PATCH] after update: ('103', 17, 'Ruizhe')
+[2026-03-11 10:41:26 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:37 CST] GET /records?date=10-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:41 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:48 CST] PATCH /records/105 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:48 CST] [PATCH] id=105 updates={'studentNumInClassroom': 7, 'percent': 7.0, 'by': 'Ruizhe'}
+[2026-03-11 10:41:48 CST] [PATCH] after update: ('105', 7, 'Ruizhe')
+[2026-03-11 10:41:51 CST] PATCH /records/106 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:51 CST] [PATCH] id=106 updates={'studentNumInClassroom': 39, 'percent': 43.3, 'by': 'Ruizhe'}
+[2026-03-11 10:41:51 CST] [PATCH] after update: ('106', 39, 'Ruizhe')
+[2026-03-11 10:41:54 CST] PATCH /records/107 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:54 CST] [PATCH] id=107 updates={'studentNumInClassroom': 12, 'percent': 12.0, 'by': 'Ruizhe'}
+[2026-03-11 10:41:54 CST] [PATCH] after update: ('107', 12, 'Ruizhe')
+[2026-03-11 10:41:58 CST] PATCH /records/108 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:41:58 CST] [PATCH] id=108 updates={'studentNumInClassroom': 20, 'percent': 11.1, 'by': 'Ruizhe'}
+[2026-03-11 10:41:58 CST] [PATCH] after update: ('108', 20, 'Ruizhe')
+[2026-03-11 10:42:04 CST] PATCH /records/109 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:04 CST] [PATCH] id=109 updates={'studentNumInClassroom': 37, 'percent': 41.1, 'by': 'Ruizhe'}
+[2026-03-11 10:42:04 CST] [PATCH] after update: ('109', 37, 'Ruizhe')
+[2026-03-11 10:42:07 CST] PATCH /records/110 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:07 CST] [PATCH] id=110 updates={'studentNumInClassroom': 14, 'percent': 9.3, 'by': 'Ruizhe'}
+[2026-03-11 10:42:07 CST] [PATCH] after update: ('110', 14, 'Ruizhe')
+[2026-03-11 10:42:12 CST] PATCH /records/111 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:12 CST] [PATCH] id=111 updates={'studentNumInClassroom': 12, 'percent': 8.0, 'by': 'Ruizhe'}
+[2026-03-11 10:42:12 CST] [PATCH] after update: ('111', 12, 'Ruizhe')
+[2026-03-11 10:42:26 CST] PATCH /records/114 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:26 CST] [PATCH] id=114 updates={'studentNumInClassroom': 16, 'percent': 10.7, 'by': 'Ruizhe'}
+[2026-03-11 10:42:26 CST] [PATCH] after update: ('114', 16, 'Ruizhe')
+[2026-03-11 10:42:46 CST] PATCH /records/113 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:46 CST] [PATCH] id=113 updates={'studentNumInClassroom': 14, 'percent': 15.6, 'by': 'Ruizhe'}
+[2026-03-11 10:42:46 CST] [PATCH] after update: ('113', 14, 'Ruizhe')
+[2026-03-11 10:42:52 CST] PATCH /records/116 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:52 CST] [PATCH] id=116 updates={'studentNumInClassroom': 14, 'percent': 9.3, 'by': 'Ruizhe'}
+[2026-03-11 10:42:52 CST] [PATCH] after update: ('116', 14, 'Ruizhe')
+[2026-03-11 10:42:56 CST] PATCH /records/115 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:42:56 CST] [PATCH] id=115 updates={'studentNumInClassroom': 16, 'percent': 16.0, 'by': 'Ruizhe'}
+[2026-03-11 10:42:56 CST] [PATCH] after update: ('115', 16, 'Ruizhe')
+[2026-03-11 10:43:04 CST] PATCH /records/117 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:43:04 CST] [PATCH] id=117 updates={'studentNumInClassroom': 51, 'percent': 51.0, 'by': 'Ruizhe'}
+[2026-03-11 10:43:04 CST] [PATCH] after update: ('117', 51, 'Ruizhe')
+[2026-03-11 10:43:09 CST] PATCH /records/112 from 2001:da8:215:3c02:f9a3:f67c:4c86:aefd
+[2026-03-11 10:43:09 CST] [PATCH] id=112 updates={'studentNumInClassroom': 6, 'percent': 6.0, 'by': 'Ruizhe'}
+[2026-03-11 10:43:09 CST] [PATCH] after update: ('112', 6, 'Ruizhe')
+[2026-03-11 14:06:43 CST] GET /dates from 2001:da8:215:3c02:ec93:5b4d:ef6c:9cc8
+[2026-03-11 14:06:43 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:ec93:5b4d:ef6c:9cc8
+[2026-03-11 14:15:34 CST] GET /dates from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 14:15:35 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 14:15:37 CST] GET /records?date=13-Mar from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 15:09:58 CST] GET /dates from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:09:59 CST] GET /records?date=11-Mar from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:10:02 CST] GET /records?date=13-Mar from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:10:39 CST] GET /records?date=11-Mar from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:10:59 CST] PATCH /records/118 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:10:59 CST] [PATCH] id=118 updates={'photoUploaded': True}
+[2026-03-11 15:10:59 CST] [PATCH] after update: ('118', 0, '')
+[2026-03-11 15:11:01 CST] PATCH /records/118 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:11:01 CST] [PATCH] id=118 updates={'studentNumInClassroom': 6, 'percent': 6.7, 'by': 'Shuyue'}
+[2026-03-11 15:11:01 CST] [PATCH] after update: ('118', 6, 'Shuyue')
+[2026-03-11 15:11:09 CST] PATCH /records/119 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:11:09 CST] [PATCH] id=119 updates={'photoUploaded': True}
+[2026-03-11 15:11:09 CST] [PATCH] after update: ('119', 0, '')
+[2026-03-11 15:11:37 CST] PATCH /records/119 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:11:37 CST] [PATCH] id=119 updates={'photoUploaded': True}
+[2026-03-11 15:11:37 CST] [PATCH] after update: ('119', 0, '')
+[2026-03-11 15:11:39 CST] PATCH /records/119 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 15:11:39 CST] [PATCH] id=119 updates={'studentNumInClassroom': 41, 'percent': 41.0, 'by': 'Shuyue'}
+[2026-03-11 15:11:39 CST] [PATCH] after update: ('119', 41, 'Shuyue')
+[2026-03-11 15:36:35 CST] GET /dates from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 15:36:35 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 15:36:37 CST] GET /records?date=13-Mar from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 17:28:52 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:28:52 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:29:20 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:29:20 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:18 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:22 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:25 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:25 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:30 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:30 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:31 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:31 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:35 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:36 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:36 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:38 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:38 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:39 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:39 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:44 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:44 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:47 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:47 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:51 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:51 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:33:55 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:33:55 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:34:02 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:34:02 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:35:11 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:35:12 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:35:14 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:35:14 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:35:18 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:35:18 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:36:03 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:36:03 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:36:07 CST] GET /dates from 59.64.129.201
+[2026-03-11 17:36:07 CST] GET /records?date=11-Mar from 59.64.129.201
+[2026-03-11 17:37:19 CST] GET /dates from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 17:37:20 CST] GET /records?date=11-Mar from 2001:da8:215:3c02:7066:8064:e409:21a2
+[2026-03-11 17:38:05 CST] GET /dates from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:05 CST] GET /records?date=11-Mar from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:14 CST] GET /records?date=12-Mar from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:15 CST] PATCH /records/134 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:15 CST] [PATCH] id=134 updates={'photoUploaded': False}
+[2026-03-11 17:38:15 CST] [PATCH] after update: ('134', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/120 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=120 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('120', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/138 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=138 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('138', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/124 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=124 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('124', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/136 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=136 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('136', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/122 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=122 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('122', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/137 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=137 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] PATCH /records/123 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=123 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: None
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('123', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/121 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=121 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('121', 0, '')
+[2026-03-11 17:38:16 CST] PATCH /records/135 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:16 CST] [PATCH] id=135 updates={'photoUploaded': False}
+[2026-03-11 17:38:16 CST] [PATCH] after update: ('135', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/143 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=143 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('143', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/127 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=127 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] PATCH /records/129 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=129 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: None
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('129', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/141 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=141 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('141', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/128 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=128 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('128', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/142 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=142 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('142', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/144 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=144 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('144', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/140 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=140 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('140', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/130 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/126 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=126 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('126', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/145 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=145 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('145', 0, '')
+[2026-03-11 17:38:17 CST] PATCH /records/131 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:17 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-11 17:38:17 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/146 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=146 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] PATCH /records/132 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: None
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('132', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/147 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=147 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('147', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/133 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('133', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/125 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=125 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('125', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/139 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=139 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('139', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/148 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/150 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] PATCH /records/149 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: None
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('149', 0, '')
+[2026-03-11 17:38:18 CST] PATCH /records/151 from 2409:8900:18b6:4242:34ae:8d10:6b6b:7801
+[2026-03-11 17:38:18 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-11 17:38:18 CST] [PATCH] after update: ('151', 0, '')
+[2026-03-12 11:06:14 CST] GET /dates from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:14 CST] GET /records?date=12-Mar from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:17 CST] PATCH /records/121 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:17 CST] [PATCH] id=121 updates={'photoUploaded': False}
+[2026-03-12 11:06:17 CST] [PATCH] after update: ('121', 0, '')
+[2026-03-12 11:06:17 CST] PATCH /records/135 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:17 CST] [PATCH] id=135 updates={'photoUploaded': False}
+[2026-03-12 11:06:17 CST] [PATCH] after update: ('135', 0, '')
+[2026-03-12 11:06:17 CST] PATCH /records/126 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:17 CST] [PATCH] id=126 updates={'photoUploaded': False}
+[2026-03-12 11:06:17 CST] [PATCH] after update: ('126', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/140 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=140 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('140', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/134 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=134 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('134', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/125 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=125 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('125', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/139 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=139 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('139', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/120 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=120 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('120', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/124 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=124 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('124', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/138 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=138 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('138', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/123 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=123 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('123', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/137 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=137 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('137', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/127 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=127 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('127', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/141 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=141 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('141', 0, '')
+[2026-03-12 11:06:18 CST] PATCH /records/136 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:18 CST] [PATCH] id=136 updates={'photoUploaded': False}
+[2026-03-12 11:06:18 CST] [PATCH] after update: ('136', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/145 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=145 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] PATCH /records/122 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('145', 0, '')
+[2026-03-12 11:06:19 CST] [PATCH] id=122 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('122', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/129 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=129 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('129', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/143 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=143 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('143', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/131 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/130 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/132 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] PATCH /records/133 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: None
+[2026-03-12 11:06:19 CST] PATCH /records/144 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=144 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('133', 0, '')
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('144', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/146 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=146 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('146', 0, '')
+[2026-03-12 11:06:19 CST] PATCH /records/147 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:19 CST] [PATCH] id=147 updates={'photoUploaded': False}
+[2026-03-12 11:06:19 CST] [PATCH] after update: ('147', 0, '')
+[2026-03-12 11:06:20 CST] PATCH /records/148 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-12 11:06:20 CST] PATCH /records/150 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] PATCH /records/149 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] PATCH /records/128 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] after update: None
+[2026-03-12 11:06:20 CST] [PATCH] id=128 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] [PATCH] after update: ('149', 0, '')
+[2026-03-12 11:06:20 CST] PATCH /records/151 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] [PATCH] after update: None
+[2026-03-12 11:06:20 CST] [PATCH] after update: ('151', 0, '')
+[2026-03-12 11:06:20 CST] PATCH /records/142 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:06:20 CST] [PATCH] id=142 updates={'photoUploaded': False}
+[2026-03-12 11:06:20 CST] [PATCH] after update: ('142', 0, '')
+[2026-03-12 11:13:57 CST] GET /records?date=11-Mar from 223.104.41.190
+[2026-03-12 11:14:04 CST] GET /records?date=12-Mar from 223.104.41.190
+[2026-03-12 11:14:05 CST] PATCH /records/120 from 223.104.41.190
+[2026-03-12 11:14:05 CST] [PATCH] id=120 updates={'photoUploaded': False}
+[2026-03-12 11:14:05 CST] [PATCH] after update: ('120', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/126 from 223.104.41.190
+[2026-03-12 11:14:06 CST] [PATCH] id=126 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('126', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/134 from 223.104.41.190
+[2026-03-12 11:14:06 CST] [PATCH] id=134 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('134', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/125 from 223.104.41.190
+[2026-03-12 11:14:06 CST] [PATCH] id=125 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('125', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/137 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:06 CST] [PATCH] id=137 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('137', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/139 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:06 CST] [PATCH] id=139 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('139', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/121 from 223.104.41.190
+[2026-03-12 11:14:06 CST] [PATCH] id=121 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('121', 0, '')
+[2026-03-12 11:14:06 CST] PATCH /records/140 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:06 CST] [PATCH] id=140 updates={'photoUploaded': False}
+[2026-03-12 11:14:06 CST] [PATCH] after update: ('140', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/123 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=123 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('123', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/135 from 223.104.41.190
+[2026-03-12 11:14:07 CST] [PATCH] id=135 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('135', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/127 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=127 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('127', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/141 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=141 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('141', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/124 from 223.104.41.190
+[2026-03-12 11:14:07 CST] [PATCH] id=124 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('124', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/142 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=142 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('142', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/128 from 223.104.41.190
+[2026-03-12 11:14:07 CST] [PATCH] id=128 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('128', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/130 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/144 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=144 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('144', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/143 from 223.104.41.190
+[2026-03-12 11:14:07 CST] [PATCH] id=143 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('143', 0, '')
+[2026-03-12 11:14:07 CST] PATCH /records/129 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:07 CST] [PATCH] id=129 updates={'photoUploaded': False}
+[2026-03-12 11:14:07 CST] [PATCH] after update: ('129', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/145 from 223.104.41.190
+[2026-03-12 11:14:08 CST] [PATCH] id=145 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('145', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/146 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=146 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('146', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/132 from 223.104.41.190
+[2026-03-12 11:14:08 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('132', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/131 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/133 from 223.104.41.190
+[2026-03-12 11:14:08 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] PATCH /records/147 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=147 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: None
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('147', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/122 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=122 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('122', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/136 from 223.104.41.190
+[2026-03-12 11:14:08 CST] [PATCH] id=136 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('136', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/148 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/149 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:08 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('149', 0, '')
+[2026-03-12 11:14:08 CST] PATCH /records/150 from 223.104.41.190
+[2026-03-12 11:14:08 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-12 11:14:08 CST] [PATCH] after update: ('150', 0, '')
+[2026-03-12 11:14:09 CST] PATCH /records/151 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:09 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-12 11:14:09 CST] [PATCH] after update: ('151', 0, '')
+[2026-03-12 11:14:10 CST] PATCH /records/138 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:10 CST] [PATCH] id=138 updates={'photoUploaded': False}
+[2026-03-12 11:14:10 CST] [PATCH] after update: ('138', 0, '')
+[2026-03-12 11:14:54 CST] PATCH /records/120 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:14:54 CST] [PATCH] id=120 updates={'photoUploaded': True}
+[2026-03-12 11:14:54 CST] [PATCH] after update: ('120', 0, '')
+[2026-03-12 11:15:48 CST] PATCH /records/121 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:15:48 CST] [PATCH] id=121 updates={'studentNumInClassroom': 10, 'percent': 10.0, 'by': 'Shuyue'}
+[2026-03-12 11:15:48 CST] [PATCH] after update: ('121', 10, 'Shuyue')
+[2026-03-12 11:16:01 CST] PATCH /records/121 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:16:01 CST] [PATCH] id=121 updates={'photoUploaded': True}
+[2026-03-12 11:16:01 CST] [PATCH] after update: ('121', 10, 'Shuyue')
+[2026-03-12 11:16:50 CST] PATCH /records/124 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:16:50 CST] [PATCH] id=124 updates={'studentNumInClassroom': 17, 'percent': 11.3, 'by': 'Shuyue'}
+[2026-03-12 11:16:50 CST] [PATCH] after update: ('124', 17, 'Shuyue')
+[2026-03-12 11:16:59 CST] PATCH /records/124 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:16:59 CST] [PATCH] id=124 updates={'photoUploaded': True}
+[2026-03-12 11:16:59 CST] [PATCH] after update: ('124', 17, 'Shuyue')
+[2026-03-12 11:17:20 CST] PATCH /records/123 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:17:20 CST] [PATCH] id=123 updates={'studentNumInClassroom': 19, 'percent': 12.7, 'by': 'Shuyue'}
+[2026-03-12 11:17:20 CST] [PATCH] after update: ('123', 19, 'Shuyue')
+[2026-03-12 11:17:27 CST] PATCH /records/123 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:17:27 CST] [PATCH] id=123 updates={'photoUploaded': True}
+[2026-03-12 11:17:27 CST] [PATCH] after update: ('123', 19, 'Shuyue')
+[2026-03-12 11:17:54 CST] PATCH /records/122 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:17:54 CST] [PATCH] id=122 updates={'studentNumInClassroom': 37, 'percent': 41.1, 'by': 'Shuyue'}
+[2026-03-12 11:17:54 CST] [PATCH] after update: ('122', 37, 'Shuyue')
+[2026-03-12 11:18:06 CST] PATCH /records/122 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:18:06 CST] [PATCH] id=122 updates={'photoUploaded': True}
+[2026-03-12 11:18:06 CST] [PATCH] after update: ('122', 37, 'Shuyue')
+[2026-03-12 11:19:02 CST] PATCH /records/125 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:19:02 CST] [PATCH] id=125 updates={'studentNumInClassroom': 24, 'percent': 13.3, 'by': 'Shuyue'}
+[2026-03-12 11:19:02 CST] [PATCH] after update: ('125', 24, 'Shuyue')
+[2026-03-12 11:19:11 CST] PATCH /records/125 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:19:11 CST] [PATCH] id=125 updates={'photoUploaded': True}
+[2026-03-12 11:19:11 CST] [PATCH] after update: ('125', 24, 'Shuyue')
+[2026-03-12 11:20:09 CST] PATCH /records/126 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:20:09 CST] [PATCH] id=126 updates={'photoUploaded': True}
+[2026-03-12 11:20:09 CST] [PATCH] after update: ('126', 0, '')
+[2026-03-12 11:20:13 CST] PATCH /records/126 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:20:13 CST] [PATCH] id=126 updates={'studentNumInClassroom': 12, 'percent': 12.0, 'by': 'Shuyue'}
+[2026-03-12 11:20:13 CST] [PATCH] after update: ('126', 12, 'Shuyue')
+[2026-03-12 11:31:17 CST] GET /dates from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:18 CST] GET /records?date=12-Mar from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:19 CST] PATCH /records/141 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:19 CST] [PATCH] id=141 updates={'photoUploaded': False}
+[2026-03-12 11:31:19 CST] [PATCH] after update: ('141', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/127 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=127 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('127', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/128 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=128 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('128', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/142 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] PATCH /records/129 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=142 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] id=129 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: None
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('129', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/143 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=143 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('143', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/130 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/131 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/146 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=146 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('146', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/132 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('132', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/144 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=144 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('144', 0, '')
+[2026-03-12 11:31:20 CST] PATCH /records/147 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:20 CST] [PATCH] id=147 updates={'photoUploaded': False}
+[2026-03-12 11:31:20 CST] [PATCH] after update: ('147', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/145 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=145 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('145', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/133 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('133', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/149 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('149', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/150 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('150', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/151 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('151', 0, '')
+[2026-03-12 11:31:21 CST] PATCH /records/148 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:21 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-12 11:31:21 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-12 11:31:34 CST] PATCH /records/129 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:34 CST] [PATCH] id=129 updates={'photoUploaded': True}
+[2026-03-12 11:31:34 CST] [PATCH] after update: ('129', 0, '')
+[2026-03-12 11:31:37 CST] PATCH /records/129 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:31:37 CST] [PATCH] id=129 updates={'studentNumInClassroom': 46, 'percent': 46.0, 'by': 'Shuyue'}
+[2026-03-12 11:31:37 CST] [PATCH] after update: ('129', 46, 'Shuyue')
+[2026-03-12 11:32:05 CST] PATCH /records/127 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:32:05 CST] [PATCH] id=127 updates={'studentNumInClassroom': 30, 'percent': 30.0, 'by': 'Shuyue'}
+[2026-03-12 11:32:05 CST] [PATCH] after update: ('127', 30, 'Shuyue')
+[2026-03-12 11:32:14 CST] PATCH /records/127 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:32:14 CST] [PATCH] id=127 updates={'photoUploaded': True}
+[2026-03-12 11:32:14 CST] [PATCH] after update: ('127', 30, 'Shuyue')
+[2026-03-12 11:32:55 CST] PATCH /records/128 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:32:55 CST] [PATCH] id=128 updates={'studentNumInClassroom': 16, 'percent': 10.7, 'by': 'Shuyue'}
+[2026-03-12 11:32:55 CST] [PATCH] after update: ('128', 16, 'Shuyue')
+[2026-03-12 11:33:04 CST] PATCH /records/128 from 2409:8900:1be2:7e4:75a3:67d9:3b90:a41b
+[2026-03-12 11:33:04 CST] [PATCH] id=128 updates={'photoUploaded': True}
+[2026-03-12 11:33:04 CST] [PATCH] after update: ('128', 16, 'Shuyue')
+[2026-03-12 11:36:23 CST] GET /dates from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:23 CST] GET /records?date=12-Mar from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:25 CST] PATCH /records/130 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:25 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-12 11:36:25 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-12 11:36:25 CST] PATCH /records/144 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:25 CST] [PATCH] id=144 updates={'photoUploaded': False}
+[2026-03-12 11:36:25 CST] [PATCH] after update: ('144', 0, '')
+[2026-03-12 11:36:25 CST] PATCH /records/131 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:25 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-12 11:36:25 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-12 11:36:25 CST] PATCH /records/145 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:25 CST] [PATCH] id=145 updates={'photoUploaded': False}
+[2026-03-12 11:36:25 CST] [PATCH] after update: ('145', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/146 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=146 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('146', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/132 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('132', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/148 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/147 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=147 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('147', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/133 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('133', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/149 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('149', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/150 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('150', 0, '')
+[2026-03-12 11:36:26 CST] PATCH /records/151 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:36:26 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-12 11:36:26 CST] [PATCH] after update: ('151', 0, '')
+[2026-03-12 11:52:34 CST] GET /records?date=13-Mar from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] PATCH /records/157 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=157 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('157', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/158 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=158 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('158', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/152 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=152 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('152', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/156 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=156 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('156', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/155 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=155 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('155', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/159 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=159 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('159', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/161 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=161 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('161', 0, '')
+[2026-03-12 11:52:36 CST] PATCH /records/160 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:36 CST] [PATCH] id=160 updates={'photoUploaded': False}
+[2026-03-12 11:52:36 CST] [PATCH] after update: ('160', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/162 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=162 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('162', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/163 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=163 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('163', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/164 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=164 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('164', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/166 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=166 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('166', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/165 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=165 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('165', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/167 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=167 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('167', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/168 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=168 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('168', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/169 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=169 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('169', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/171 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=171 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('171', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/170 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=170 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('170', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/173 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=173 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('173', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/154 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=154 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('154', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/174 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=174 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('174', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/172 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=172 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('172', 0, '')
+[2026-03-12 11:52:37 CST] PATCH /records/153 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:37 CST] [PATCH] id=153 updates={'photoUploaded': False}
+[2026-03-12 11:52:37 CST] [PATCH] after update: ('153', 0, '')
+[2026-03-12 11:52:43 CST] GET /records?date=12-Mar from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] PATCH /records/133 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=133 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('133', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/148 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=148 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('148', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/132 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=132 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('132', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/130 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=130 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('130', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/131 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=131 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('131', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/151 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] PATCH /records/150 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=151 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] id=150 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: None
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('150', 0, '')
+[2026-03-12 11:52:44 CST] PATCH /records/149 from 2001:da8:215:3c02:68ff:dd59:b0d3:21ba
+[2026-03-12 11:52:44 CST] [PATCH] id=149 updates={'photoUploaded': False}
+[2026-03-12 11:52:44 CST] [PATCH] after update: ('149', 0, '')
