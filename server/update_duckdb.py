@@ -9,9 +9,11 @@ Usage:
     python update_duckdb.py --update                     # actually write to DB
     python update_duckdb.py --xlsx /path/to/file.xlsx
     python update_duckdb.py --cutoff 2026-03-10          # change cutoff (inclusive)
+    python update_duckdb.py --until 2026-03-06           # only update up to this date
     python update_duckdb.py --year 2026                  # year used to parse "D-Mon" dates
 """
 
+import hashlib
 import shutil
 import sys
 import argparse
@@ -19,6 +21,12 @@ import duckdb
 import pandas as pd
 from pathlib import Path
 from datetime import date, datetime, timezone, timedelta
+
+
+def make_id(week, day, date, time, room, moduleCode, moduleName, lecturer) -> str:
+    """Stable hash ID derived from immutable session fields."""
+    key = f"{week}|{day}|{date}|{time}|{room}|{moduleCode}|{moduleName}|{lecturer}"
+    return hashlib.sha256(key.encode()).hexdigest()[:16]
 
 DB_PATH      = Path(__file__).parent / 'data' / 'attend.duckdb'
 XLSX_DEFAULT = Path(__file__).parent / '2026-03-11-1026-export.xlsx'
@@ -78,6 +86,8 @@ def parse_args():
     p.add_argument('--xlsx',    default=str(XLSX_DEFAULT))
     p.add_argument('--cutoff',  default=str(CUTOFF_DEFAULT),
                    help='Cutoff date YYYY-MM-DD (inclusive). Rows on/after are updated.')
+    p.add_argument('--until',   default=None,
+                   help='Upper bound date YYYY-MM-DD (inclusive). Rows after are skipped.')
     p.add_argument('--year',    type=int, default=YEAR_DEFAULT,
                    help='Year assumed when parsing "D-Mon" date strings (default: 2026)')
     p.add_argument('--update', action='store_true',
@@ -139,8 +149,12 @@ def load_xlsx(xlsx_path: Path, year: int) -> pd.DataFrame:
     df['day']    = df['day'].fillna('').astype(str)
     df['remark'] = df['remark'].fillna('').astype(str)
 
-    if 'id' not in df.columns:
-        df['id'] = df['indexNo'].astype(int).astype(str)
+    # Always recompute id from session fields (ignore any id column in xlsx)
+    df['id'] = df.apply(
+        lambda r: make_id(r['week'], r['day'], r['date'], r['time'],
+                          r['room'], r['moduleCode'], r['moduleName'], r['lecturer']),
+        axis=1,
+    )
 
     df['studentNumInClassroom'] = df.get('studentNumInClassroom',
                                          pd.Series(dtype=float)).fillna(0).astype(int)
@@ -158,6 +172,7 @@ def main():
     args = parse_args()
     xlsx_path = Path(args.xlsx)
     cutoff    = pd.Timestamp(args.cutoff).date()
+    until     = pd.Timestamp(args.until).date() if args.until else None
 
     if not xlsx_path.exists():
         print(f'ERROR: {xlsx_path} not found')
@@ -175,15 +190,18 @@ def main():
     else:
         print('WARNING: No valid dates found in xlsx!')
 
-    # ── Filter: only rows on/after cutoff ─────────────────────────────────────
-    mask    = df['_date_dt'].notna() & (df['_date_dt'].dt.date >= cutoff)
+    # ── Filter: only rows within [cutoff, until] ──────────────────────────────
+    mask = df['_date_dt'].notna() & (df['_date_dt'].dt.date >= cutoff)
+    if until:
+        mask &= df['_date_dt'].dt.date <= until
     df_new  = df[mask].copy()
     df_skip = df[~mask]
 
-    print(f'\nCutoff: {cutoff} (inclusive)')
+    range_str = f'{cutoff} → {until}' if until else f'{cutoff} → (no limit)'
+    print(f'\nDate range: {range_str} (inclusive)')
     print(f'  Rows in xlsx total        : {len(df)}')
-    print(f'  Rows BEFORE cutoff (skip) : {len(df_skip)}')
-    print(f'  Rows ON/AFTER cutoff      : {len(df_new)}')
+    print(f'  Rows outside range (skip) : {len(df_skip)}')
+    print(f'  Rows in range             : {len(df_new)}')
 
     if df_new.empty:
         print('Nothing to update.')

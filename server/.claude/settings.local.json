@@ -6,7 +6,14 @@
       "Bash(/root/miniconda3/envs/wx/bin/pip install:*)",
       "Bash(chmod +x:*)",
       "Bash(python3 -c \"\nimport duckdb\ncon = duckdb.connect\\('data/attend.duckdb'\\)\nprint\\('=== indexNo 127 on 12-Mar ==='\\)\ndf = con.execute\\(\\\\\"SELECT * FROM attend WHERE date='12-Mar' AND indexNo=127 ORDER BY id\\\\\"\\).df\\(\\)\nprint\\(df.to_string\\(\\)\\)\nprint\\(\\)\nprint\\('=== indexNo 141 on 12-Mar ==='\\)\ndf = con.execute\\(\\\\\"SELECT * FROM attend WHERE date='12-Mar' AND indexNo=141 ORDER BY id\\\\\"\\).df\\(\\)\nprint\\(df.to_string\\(\\)\\)\n\")",
-      "Bash(kill 1930759 && echo \"stopped\")"
+      "Bash(kill 1930759 && echo \"stopped\")",
+      "Bash(netstat -tlnp)",
+      "Bash(python -c \"import pandas as pd; df = pd.read_excel\\('/root/BUPT-IS-CheckAttendApp/server/temp.xlsx'\\); print\\(df[['Date','Time','Room']].head\\(20\\).to_string\\(\\)\\)\")",
+      "Bash(ossutil64 ls:*)",
+      "Bash(python -c \"import pandas as pd; df = pd.read_excel\\('2026-03-13-1833-export.xlsx'\\); print\\(df.columns.tolist\\(\\)\\); print\\(df.head\\(2\\).to_string\\(\\)\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python -c \"import pandas as pd; df = pd.read_excel\\('2026-03-13-1833-export.xlsx'\\); print\\(df['Date'].head\\(5\\).tolist\\(\\)\\); print\\(type\\(df['Date'].iloc[0]\\)\\)\")",
+      "Bash(python -c \"\nfrom pathlib import Path\nimport import_xlsx\nimport_xlsx.XLSX_PATH = Path\\('2026-03-13-1833-export.xlsx'\\)\nimport_xlsx.DB_PATH = Path\\('/tmp/test_attend.duckdb'\\)\nimport_xlsx.import_xlsx\\(preserve=False\\)\n\")"
     ]
   }
 }

@@ -15,7 +15,7 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
-DB_PATH = Path(__file__).parent / 'data' / 'attend.duckdb'
+DB_PATH = Path(__file__).parent / 'data' / 'attend.duckdb.bak.20260313-100126'
 
 
 def export_xlsx(out_path: Path = None, filled_only: bool = False):
