@@ -1,5 +1,5 @@
 // schedule.js
-const API = 'https://zoo-chance-acquired-finally.trycloudflare.com'
+const DEFAULT_API = 'https://approval-fantastic-online-textile.trycloudflare.com'
 
 const { hmacSha1Base64 } = require('../../utils/hmac_sha1')
 const OSS_BUCKET     = 'us-aisocial'
@@ -85,10 +85,10 @@ function getScrollTargetIdx(classes) {
 }
 
 // PATCH /records/{id}
-function apiPatch(id, data) {
+function apiPatch(apiUrl, id, data) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `${API}/records/${id}`,
+      url: `${apiUrl}/records/${id}`,
       method: 'PATCH',
       data,
       header: { 'Content-Type': 'application/json' },
@@ -116,19 +116,23 @@ Page({
     showLoginModal: false,
     inputName: '',
     wechatId: '',
+    apiUrl: DEFAULT_API,
+    showApiModal: false,
+    inputApiUrl: '',
   },
 
   onLoad() {
     const wechatId = getApp().globalData.wechatId || ''
-    this.setData({ wechatId, showLoginModal: !wechatId })
+    const apiUrl = wx.getStorageSync('apiUrl') || DEFAULT_API
+    this.setData({ wechatId, showLoginModal: !wechatId, apiUrl })
     wx.showLoading({ title: '加载中...' })
     wx.request({
-      url: `${API}/dates`,
+      url: `${apiUrl}/dates`,
       method: 'GET',
       success: res => {
         const dateRaw = res.data
           .sort((a, b) => dateKey(a.date) - dateKey(b.date))
-        const dateList = dateRaw.map(d => d.date)
+        const dateList = dateRaw.map(d => `${d.date} ${d.day}`)
         const today = getTodayStr()
         let dateIndex = dateRaw.findIndex(d => d.date === today)
         if (dateIndex === -1) dateIndex = 0
@@ -168,9 +172,10 @@ Page({
     const { dateRaw, dateIndex } = this.data
     const date = dateRaw[dateIndex] && dateRaw[dateIndex].date
     if (!date) return
+    const { apiUrl } = this.data
     wx.showLoading({ title: '加载中...' })
     wx.request({
-      url: `${API}/records`,
+      url: `${apiUrl}/records`,
       method: 'GET',
       data: { date },
       success: res => {
@@ -190,6 +195,7 @@ Page({
           by: r.by || '',
           photoUrl: this._buildPhotoUrl(date, r.time, r.room),
           hasPhoto: !!r.photoUploaded,
+          photoExpanded: false,
         }))
         const targetIdx = getScrollTargetIdx(classes)
         this.setData({
@@ -210,7 +216,18 @@ Page({
 
   onPhotoLoad(e) {
     const idx = e.currentTarget.dataset.idx
-    this.setData({ [`classes[${idx}].hasPhoto`]: true })
+    const rec = this.data.classes[idx]
+    const update = { [`classes[${idx}].hasPhoto`]: true }
+    if (this.data.selectedIdx === idx) {
+      update.selectedRecord = { ...this.data.selectedRecord, hasPhoto: true }
+    }
+    this.setData(update)
+    // 图片存在但 DB 未标记，自动修正
+    if (rec && !rec.hasPhoto) {
+      apiPatch(this.data.apiUrl, rec.id, { photoUploaded: true })
+        .then(() => console.log('[photoLoad] DB updated to true, id=', rec.id))
+        .catch(err => console.error('[photoLoad] DB update failed', err))
+    }
   },
 
   onPhotoError(e) {
@@ -223,7 +240,7 @@ Page({
     }
     this.setData(update)
     if (rec) {
-      apiPatch(rec.id, { photoUploaded: false })
+      apiPatch(this.data.apiUrl, rec.id, { photoUploaded: false })
         .then(() => console.log('[photoError] DB updated ok'))
         .catch(err => console.error('[photoError] DB update failed', err))
     }
@@ -231,7 +248,20 @@ Page({
 
   onSelectRow(e) {
     const idx = e.currentTarget.dataset.idx
-    this.setData({ selectedIdx: idx, selectedRecord: this.data.classes[idx] })
+    const cur = this.data.classes[idx]
+    const photoExpanded = !cur.photoExpanded
+    this.setData({
+      selectedIdx: idx,
+      selectedRecord: cur,
+      [`classes[${idx}].photoExpanded`]: photoExpanded,
+    })
+  },
+
+  onPreviewPhoto(e) {
+    const idx = e.currentTarget.dataset.idx
+    const item = this.data.classes[idx]
+    this.setData({ [`classes[${idx}].photoExpanded`]: false })
+    wx.previewImage({ current: item.photoUrl, urls: [item.photoUrl] })
   },
 
   onNameInput(e) {
@@ -281,7 +311,7 @@ Page({
     const wechatId = this.data.wechatId
     console.log('[PATCH]', rec.id, { studentNumInClassroom: count, percent, by: wechatId })
     wx.showLoading({ title: '提交中...' })
-    apiPatch(rec.id, { studentNumInClassroom: count, percent, by: wechatId })
+    apiPatch(this.data.apiUrl, rec.id, { studentNumInClassroom: count, percent, by: wechatId })
       .then(() => {
         wx.hideLoading()
         const idx = this.data.selectedIdx
@@ -326,7 +356,7 @@ Page({
           .then(() => {
             const idx = this.data.selectedIdx
             const rec = this.data.classes[idx]
-            return apiPatch(rec.id, { photoUploaded: true }).then(() => idx)
+            return apiPatch(this.data.apiUrl, rec.id, { photoUploaded: true }).then(() => idx)
           })
           .then(idx => {
             wx.hideLoading()
@@ -341,6 +371,34 @@ Page({
           })
       },
     })
+  },
+
+  onShowApiModal() {
+    this.setData({ showApiModal: true, inputApiUrl: this.data.apiUrl })
+  },
+
+  onApiUrlInput(e) {
+    this.setData({ inputApiUrl: e.detail.value })
+  },
+
+  onCancelApiModal() {
+    this.setData({ showApiModal: false, inputApiUrl: '' })
+  },
+
+  onConfirmApiUrl() {
+    const url = this.data.inputApiUrl.trim().replace(/\/$/, '')
+    if (!url) {
+      wx.showToast({ title: '请输入API地址', icon: 'none' })
+      return
+    }
+    wx.setStorageSync('apiUrl', url)
+    this.setData({ apiUrl: url, showApiModal: false, inputApiUrl: '' })
+    wx.showToast({ title: '已更新', icon: 'success' })
+  },
+
+  onResetApiUrl() {
+    wx.setStorageSync('apiUrl', DEFAULT_API)
+    this.setData({ apiUrl: DEFAULT_API, inputApiUrl: DEFAULT_API })
   },
 
   noop() {},

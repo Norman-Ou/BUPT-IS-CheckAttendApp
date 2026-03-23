@@ -10,7 +10,7 @@
         </view>
       </picker>
     </view>
-    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onQuery">{{wechatId}}</view>
+    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onShowApiModal">{{wechatId}}</view>
   </view>
 
   <!-- 信息展示区 -->
@@ -46,15 +46,23 @@
               <text class="row-filled">{{item.studentNumInClassroom}}/{{item.totalStudentNum}} {{item.percent}}%</text>
             </view>
           </view>
-          <!-- 隐藏的 image：仅当 DB 标记为已上传时发请求，检测图片是否被删除 -->
+          <!-- 隐藏的 image：始终发请求，双向同步 DB 的 photoUploaded 状态 -->
           <image
-            wx:if="{{item.hasPhoto}}"
             class="thumb-invisible"
             src="{{item.photoUrl}}"
             bindload="onPhotoLoad"
             binderror="onPhotoError"
             data-idx="{{index}}"
           />
+          <!-- 展开的照片预览（点击放大并收起） -->
+          <view
+            wx:if="{{item.photoExpanded && item.hasPhoto}}"
+            class="photo-preview-wrap"
+            catchtap="onPreviewPhoto"
+            data-idx="{{index}}"
+          >
+            <image class="photo-thumb" src="{{item.photoUrl}}" mode="widthFix" lazy-load />
+          </view>
         </view>
       </block>
 
@@ -95,6 +103,27 @@
     />
     <view class="modal-btns">
       <view class="modal-confirm" bindtap="onConfirmName">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- API 设置弹窗 -->
+<view wx:if="{{showApiModal}}" class="modal-mask" bindtap="onCancelApiModal">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">API 地址设置</text>
+    <text class="modal-desc">预设：{{apiUrl}}</text>
+    <input
+      class="modal-input"
+      type="text"
+      placeholder="输入新的 API 地址"
+      focus="{{showApiModal}}"
+      bindinput="onApiUrlInput"
+      value="{{inputApiUrl}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onResetApiUrl">重置</view>
+      <view class="modal-cancel" bindtap="onCancelApiModal">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmApiUrl">确认</view>
     </view>
   </view>
 </view>
