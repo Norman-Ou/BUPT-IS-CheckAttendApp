@@ -1,0 +1,2982 @@
+{
+    "EIE_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "A4",
+        "Module Name": "Software Engineering",
+        "Class": "17-20",
+        "Programme": "EIE",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "C17",
+                "Room": "3-537"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "C29",
+                "Room": "3-546"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "C89",
+                "Room": "3-333"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "C101",
+                "Room": "3-537"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "D15",
+                "Room": "3-537"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "D27",
+                "Room": "3-535"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "D87",
+                "Room": "3-437"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "D99",
+                "Room": "3-537"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "E12",
+                "Room": "3-335"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "E24",
+                "Room": "3-435"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "E84",
+                "Room": "3-437"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "E96",
+                "Room": "3-333"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "F15",
+                "Room": "3-519"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "F27",
+                "Room": "3-519"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "F87",
+                "Room": "3-417"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "F99",
+                "Room": "3-519"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "G12",
+                "Room": "3-535"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "G24",
+                "Room": "3-435"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "G84",
+                "Room": "3-435"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "G96",
+                "Room": "3-437"
+            }
+        ]
+    },
+    "EIE_EBU6305": {
+        "Code": "EBU6305",
+        "cell_index": "A5",
+        "Module Name": "Interactive Media Design and Production",
+        "Class": "17-20",
+        "Programme": "EIE",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "C16",
+                "Room": "3-333"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "C28",
+                "Room": "3-546"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "C88",
+                "Room": "3-537"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "C100",
+                "Room": "3-333"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "D17",
+                "Room": "3-335"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "D29",
+                "Room": "3-335"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "D89",
+                "Room": "3-335"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "D101",
+                "Room": "3-335"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "08:00-09:35",
+                "Week": "1",
+                "cell": "E11",
+                "Room": "3-537"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "E23",
+                "Room": "3-537"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "E83",
+                "Room": "3-535"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "08:00-09:35",
+                "Week": "8",
+                "cell": "E95",
+                "Room": "3-537"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "F12",
+                "Room": "3-317"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "F24",
+                "Room": "3-317"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "F84",
+                "Room": "3-335"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "F96",
+                "Room": "3-335"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "G16",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "G28",
+                "Room": "3-537"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "G88",
+                "Room": "3-535"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "G100",
+                "Room": "3-537"
+            }
+        ]
+    },
+    "EIE_EBU6230": {
+        "Code": "EBU6230",
+        "cell_index": "A6",
+        "Module Name": "Image and Video Processing",
+        "Class": "17-20",
+        "Programme": "EIE",
+        "schedule": [
+            {
+                "Date": "23-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "C52",
+                "Room": "3-537"
+            },
+            {
+                "Date": "30-Mar",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "C64",
+                "Room": "3-333"
+            },
+            {
+                "Date": "11-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "C112",
+                "Room": "4-238"
+            },
+            {
+                "Date": "18-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "C124",
+                "Room": "3-339"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "D53",
+                "Room": "3-337"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "D65",
+                "Room": "3-535"
+            },
+            {
+                "Date": "12-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "D113",
+                "Room": "3-535"
+            },
+            {
+                "Date": "19-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "D125",
+                "Room": "3-335"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "08:00-09:35",
+                "Week": "4",
+                "cell": "E47",
+                "Room": "3-537"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "08:00-09:35",
+                "Week": "5",
+                "cell": "E59",
+                "Room": "3-539"
+            },
+            {
+                "Date": "13-May",
+                "Time": "08:00-09:35",
+                "Week": "11",
+                "cell": "E107",
+                "Room": "3-539"
+            },
+            {
+                "Date": "20-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "E119",
+                "Room": "3-546"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "F48",
+                "Room": "3-317"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "F60",
+                "Room": "3-546"
+            },
+            {
+                "Date": "14-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "F108",
+                "Room": "3-335"
+            },
+            {
+                "Date": "21-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "F120",
+                "Room": "3-335"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "G52",
+                "Room": "3-437"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "G64",
+                "Room": "3-539"
+            },
+            {
+                "Date": "15-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "G112",
+                "Room": "3-546"
+            },
+            {
+                "Date": "22-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "G124",
+                "Room": "3-539"
+            }
+        ]
+    },
+    "EIE_EBU5408": {
+        "Code": "EBU5408",
+        "cell_index": "A7",
+        "Module Name": "Digital Audio Fundamentals",
+        "Class": "17-20",
+        "Programme": "EIE",
+        "schedule": [
+            {
+                "Date": "16-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "C41",
+                "Room": "3-535"
+            },
+            {
+                "Date": "23-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "C53",
+                "Room": "3-537"
+            },
+            {
+                "Date": "11-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "C113",
+                "Room": "4-238"
+            },
+            {
+                "Date": "18-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "C125",
+                "Room": "3-333"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "D39",
+                "Room": "3-537"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "D51",
+                "Room": "3-433"
+            },
+            {
+                "Date": "12-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "D111",
+                "Room": "3-417"
+            },
+            {
+                "Date": "19-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "D123",
+                "Room": "3-417"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "E36",
+                "Room": "3-335"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "E48",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "E108",
+                "Room": "3-335"
+            },
+            {
+                "Date": "20-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "E120",
+                "Room": "3-535"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "F39",
+                "Room": "3-519"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "F51",
+                "Room": "3-417"
+            },
+            {
+                "Date": "14-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "F111",
+                "Room": "3-519"
+            },
+            {
+                "Date": "21-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "F123",
+                "Room": "3-519"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "G36",
+                "Room": "3-519"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "G48",
+                "Room": "3-433"
+            },
+            {
+                "Date": "15-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "G108",
+                "Room": "3-437"
+            },
+            {
+                "Date": "22-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "G120",
+                "Room": "3-437"
+            }
+        ]
+    },
+    "IST_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "J4",
+        "Module Name": "Software Engineering",
+        "Class": "21-24",
+        "Programme": "IST",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "L17",
+                "Room": "3-539"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "L29",
+                "Room": "3-539"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "L89",
+                "Room": "3-539"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "L101",
+                "Room": "3-539"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "M15",
+                "Room": "3-535"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "M27",
+                "Room": "3-537"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "M87",
+                "Room": "3-417"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "M99",
+                "Room": "3-417"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "N12",
+                "Room": "3-546"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "N24",
+                "Room": "3-540"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "N84",
+                "Room": "3-537"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "N96",
+                "Room": "3-540"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "O15",
+                "Room": "3-539"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "O27",
+                "Room": "3-537"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "O87",
+                "Room": "3-519"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "O99",
+                "Room": "3-217"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "P12",
+                "Room": "3-546"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "P24",
+                "Room": "3-535"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "P84",
+                "Room": "3-437"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "P96",
+                "Room": "3-535"
+            }
+        ]
+    },
+    "IST_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "J5",
+        "Module Name": "Embedded Systems",
+        "Class": "21-24",
+        "Programme": "IST",
+        "schedule": [
+            {
+                "Date": "30-Mar",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "L64",
+                "Room": "3-539"
+            },
+            {
+                "Date": "6-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "L76",
+                "Room": "3-539"
+            },
+            {
+                "Date": "18-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "L124",
+                "Room": "3-539"
+            },
+            {
+                "Date": "25-May",
+                "Time": "14:45-16:25",
+                "Week": "13",
+                "cell": "L136",
+                "Room": "3-333"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "M65",
+                "Room": "3-335"
+            },
+            {
+                "Date": "7-Apr",
+                "Time": "16:35-18:10",
+                "Week": "6",
+                "cell": "M77",
+                "Room": "3-335"
+            },
+            {
+                "Date": "19-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "M125",
+                "Room": "3-337"
+            },
+            {
+                "Date": "26-May",
+                "Time": "16:35-18:10",
+                "Week": "13",
+                "cell": "M137",
+                "Room": "3-335"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "08:00-09:35",
+                "Week": "5",
+                "cell": "N59",
+                "Room": "3-540"
+            },
+            {
+                "Date": "8-Apr",
+                "Time": "08:00-09:35",
+                "Week": "6",
+                "cell": "N71",
+                "Room": "3-417"
+            },
+            {
+                "Date": "20-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "N119",
+                "Room": "4-202"
+            },
+            {
+                "Date": "27-May",
+                "Time": "08:00-09:35",
+                "Week": "13",
+                "cell": "N131",
+                "Room": "3-535"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "O60",
+                "Room": "3-335"
+            },
+            {
+                "Date": "9-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "O72",
+                "Room": "3-217"
+            },
+            {
+                "Date": "21-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "O120",
+                "Room": "4-202"
+            },
+            {
+                "Date": "28-May",
+                "Time": "09:50-11:25",
+                "Week": "13",
+                "cell": "O132",
+                "Room": "3-335"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "P64",
+                "Room": "3-433"
+            },
+            {
+                "Date": "10-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "P76",
+                "Room": "3-433"
+            },
+            {
+                "Date": "22-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "P124",
+                "Room": "3-433"
+            },
+            {
+                "Date": "29-May",
+                "Time": "14:45-16:25",
+                "Week": "13",
+                "cell": "P136",
+                "Room": "3-433"
+            }
+        ]
+    },
+    "IST_EBU6505": {
+        "Code": "EBU6505",
+        "cell_index": "J6",
+        "Module Name": "Reasoning and Agents",
+        "Class": "21-24",
+        "Programme": "IST",
+        "schedule": [
+            {
+                "Date": "30-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "L65",
+                "Room": "3-539"
+            },
+            {
+                "Date": "6-Apr",
+                "Time": "16:35-18:10",
+                "Week": "6",
+                "cell": "L77",
+                "Room": "3-535"
+            },
+            {
+                "Date": "11-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "L113",
+                "Room": "3-539"
+            },
+            {
+                "Date": "18-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "L125",
+                "Room": "3-539"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "M63",
+                "Room": "3-337"
+            },
+            {
+                "Date": "7-Apr",
+                "Time": "13:00-14:35",
+                "Week": "6",
+                "cell": "M75",
+                "Room": "3-417"
+            },
+            {
+                "Date": "12-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "M111",
+                "Room": "3-537"
+            },
+            {
+                "Date": "19-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "M123",
+                "Room": "3-337"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "N60",
+                "Room": "3-540"
+            },
+            {
+                "Date": "8-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "N72",
+                "Room": "3-333"
+            },
+            {
+                "Date": "13-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "N108",
+                "Room": "3-540"
+            },
+            {
+                "Date": "20-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "N120",
+                "Room": "4-202"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "O63",
+                "Room": "3-546"
+            },
+            {
+                "Date": "9-Apr",
+                "Time": "13:00-14:35",
+                "Week": "6",
+                "cell": "O75",
+                "Room": "3-519"
+            },
+            {
+                "Date": "14-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "O111",
+                "Room": "3-546"
+            },
+            {
+                "Date": "21-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "O123",
+                "Room": "4-203"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "P60",
+                "Room": "3-535"
+            },
+            {
+                "Date": "10-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "P72",
+                "Room": "3-437"
+            },
+            {
+                "Date": "15-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "P108",
+                "Room": "3-535"
+            },
+            {
+                "Date": "22-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "P120",
+                "Room": "3-519"
+            }
+        ]
+    },
+    "IST_EBU6307": {
+        "Code": "EBU6307",
+        "cell_index": "J7",
+        "Module Name": "Visual Computing",
+        "Class": "21-24",
+        "Programme": "IST",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "L16",
+                "Room": "3-539"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "L28",
+                "Room": "3-539"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "L88",
+                "Room": "3-539"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "L100",
+                "Room": "3-539"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "M17",
+                "Room": "3-337"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "M29",
+                "Room": "3-337"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "M89",
+                "Room": "3-337"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "M101",
+                "Room": "3-337"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "08:00-09:35",
+                "Week": "1",
+                "cell": "N11",
+                "Room": "3-546"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "N23",
+                "Room": "3-540"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "N83",
+                "Room": "3-537"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "08:00-09:35",
+                "Week": "8",
+                "cell": "N95",
+                "Room": "3-540"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "O12",
+                "Room": "3-335"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "O24",
+                "Room": "3-535"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "O84",
+                "Room": "3-535"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "O96",
+                "Room": "3-317"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "P16",
+                "Room": "3-433"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "P28",
+                "Room": "3-433"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "P88",
+                "Room": "3-433"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "P100",
+                "Room": "3-433"
+            }
+        ]
+    },
+    "Tele-G1_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "S4",
+        "Module Name": "Software Engineering",
+        "Class": "1~5",
+        "Programme": "Tele-G1",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "U17",
+                "Room": "3-437"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "U29",
+                "Room": "3-535"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "U89",
+                "Room": "3-535"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "U101",
+                "Room": "3-333"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "V15",
+                "Room": "3-437"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "V27",
+                "Room": "3-437"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "V87",
+                "Room": "3-435"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "V99",
+                "Room": "3-435"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "W12",
+                "Room": "3-437"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "W24",
+                "Room": "3-437"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "W84",
+                "Room": "3-435"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "W96",
+                "Room": "3-433"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "13:00-14:35",
+                "Week": "1",
+                "cell": "X15",
+                "Room": "3-535"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "X27",
+                "Room": "3-437"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "X87",
+                "Room": "3-437"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "X99",
+                "Room": "3-535"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "08:00-09:35",
+                "Week": "1",
+                "cell": "Y11",
+                "Room": "3-437"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "Y23",
+                "Room": "3-435"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "Y83",
+                "Room": "3-433"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "08:00-09:35",
+                "Week": "8",
+                "cell": "Y95",
+                "Room": "3-435"
+            }
+        ]
+    },
+    "Tele-G1_EBU6475": {
+        "Code": "EBU6475",
+        "cell_index": "S5",
+        "Module Name": "Microprocessor System Design",
+        "Class": "1~5",
+        "Programme": "Tele-G1",
+        "schedule": [
+            {
+                "Date": "16-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "U40",
+                "Room": "4-202"
+            },
+            {
+                "Date": "23-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "U52",
+                "Room": "3-535"
+            },
+            {
+                "Date": "6-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "U76",
+                "Room": "3-546"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "U88",
+                "Room": "3-535"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "V41",
+                "Room": "3-435"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "V53",
+                "Room": "3-535"
+            },
+            {
+                "Date": "7-Apr",
+                "Time": "16:35-18:10",
+                "Week": "6",
+                "cell": "V77",
+                "Room": "3-535"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "V89",
+                "Room": "3-535"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "08:00-09:35",
+                "Week": "3",
+                "cell": "W35",
+                "Room": "3-535"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "08:00-09:35",
+                "Week": "4",
+                "cell": "W47",
+                "Room": "3-335"
+            },
+            {
+                "Date": "8-Apr",
+                "Time": "08:00-09:35",
+                "Week": "6",
+                "cell": "W71",
+                "Room": "3-535"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "W83",
+                "Room": "3-437"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "X36",
+                "Room": "3-535"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "X48",
+                "Room": "3-437"
+            },
+            {
+                "Date": "9-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "X72",
+                "Room": "3-535"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "X84",
+                "Room": "3-433"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "Y40",
+                "Room": "3-535"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "Y52",
+                "Room": "3-335"
+            },
+            {
+                "Date": "10-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "Y76",
+                "Room": "3-535"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "Y88",
+                "Room": "3-435"
+            }
+        ]
+    },
+    "Tele-G1_EBU6366": {
+        "Code": "EBU6366",
+        "cell_index": "S6",
+        "Module Name": "Microwave, Millimeter and Optical Transmission",
+        "Class": "1~5",
+        "Programme": "Tele-G1",
+        "schedule": [
+            {
+                "Date": "9-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "U28",
+                "Room": "3-535"
+            },
+            {
+                "Date": "16-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "U41",
+                "Room": "4-202"
+            },
+            {
+                "Date": "18-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "U124",
+                "Room": "3-537"
+            },
+            {
+                "Date": "25-May",
+                "Time": "16:35-18:10",
+                "Week": "13",
+                "cell": "U137",
+                "Room": "3-535"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "V29",
+                "Room": "3-535"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "V39",
+                "Room": "3-335"
+            },
+            {
+                "Date": "19-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "V125",
+                "Room": "3-535"
+            },
+            {
+                "Date": "26-May",
+                "Time": "13:00-14:35",
+                "Week": "13",
+                "cell": "V135",
+                "Room": "3-335"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "W23",
+                "Room": "3-435"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "W36",
+                "Room": "3-333"
+            },
+            {
+                "Date": "20-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "W119",
+                "Room": "3-335"
+            },
+            {
+                "Date": "27-May",
+                "Time": "09:50-11:25",
+                "Week": "13",
+                "cell": "W132",
+                "Room": "3-433"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "X24",
+                "Room": "3-435"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "X39",
+                "Room": "3-535"
+            },
+            {
+                "Date": "21-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "X120",
+                "Room": "3-535"
+            },
+            {
+                "Date": "28-May",
+                "Time": "13:00-14:35",
+                "Week": "13",
+                "cell": "X135",
+                "Room": "3-535"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "Y28",
+                "Room": "3-435"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "08:00-09:35",
+                "Week": "3",
+                "cell": "Y35",
+                "Room": "3-437"
+            },
+            {
+                "Date": "22-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "Y124",
+                "Room": "3-535"
+            },
+            {
+                "Date": "29-May",
+                "Time": "08:00-09:35",
+                "Week": "13",
+                "cell": "Y131",
+                "Room": "3-433"
+            }
+        ]
+    },
+    "Tele-G1_EBU5606": {
+        "Code": "EBU5606",
+        "cell_index": "S7",
+        "Module Name": "Product Development and Marketing",
+        "Class": "1~5",
+        "Programme": "Tele-G1",
+        "schedule": [
+            {
+                "Date": "23-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "U53",
+                "Room": "3-535"
+            },
+            {
+                "Date": "30-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "U65",
+                "Room": "3-546"
+            },
+            {
+                "Date": "11-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "U113",
+                "Room": "3-546"
+            },
+            {
+                "Date": "18-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "U125",
+                "Room": "3-537"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "V51",
+                "Room": "3-335"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "V63",
+                "Room": "3-433"
+            },
+            {
+                "Date": "12-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "V111",
+                "Room": "3-535"
+            },
+            {
+                "Date": "19-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "V123",
+                "Room": "3-537"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "W48",
+                "Room": "3-333"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "W60",
+                "Room": "3-337"
+            },
+            {
+                "Date": "13-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "W108",
+                "Room": "3-537"
+            },
+            {
+                "Date": "20-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "W120",
+                "Room": "3-335"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "X51",
+                "Room": "3-437"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "X63",
+                "Room": "3-539"
+            },
+            {
+                "Date": "14-May",
+                "Time": "13:00-14:35",
+                "Week": "11",
+                "cell": "X111",
+                "Room": "3-539"
+            },
+            {
+                "Date": "21-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "X123",
+                "Room": "3-539"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "08:00-09:35",
+                "Week": "4",
+                "cell": "Y47",
+                "Room": "3-433"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "08:00-09:35",
+                "Week": "5",
+                "cell": "Y59",
+                "Room": "3-535"
+            },
+            {
+                "Date": "15-May",
+                "Time": "08:00-09:35",
+                "Week": "11",
+                "cell": "Y107",
+                "Room": "3-535"
+            },
+            {
+                "Date": "22-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "Y119",
+                "Room": "3-535"
+            }
+        ]
+    },
+    "Tele-G2_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "AA4",
+        "Module Name": "Software Engineering",
+        "Class": "6-10",
+        "Programme": "Tele-G2",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "AC16",
+                "Room": "3-537"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AC28",
+                "Room": "3-435"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "AC88",
+                "Room": "3-437"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AC100",
+                "Room": "3-537"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "AD17",
+                "Room": "3-435"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "AD29",
+                "Room": "3-435"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "AD89",
+                "Room": "3-435"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "AD101",
+                "Room": "3-435"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "08:00-09:35",
+                "Week": "1",
+                "cell": "AE11",
+                "Room": "3-335"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "AE23",
+                "Room": "3-335"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "AE83",
+                "Room": "3-335"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "08:00-09:35",
+                "Week": "8",
+                "cell": "AE95",
+                "Room": "3-335"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "AF12",
+                "Room": "3-337"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "AF24",
+                "Room": "3-433"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "AF84",
+                "Room": "3-337"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "AF96",
+                "Room": "3-337"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "AG16",
+                "Room": "3-335"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AG28",
+                "Room": "3-335"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "AG88",
+                "Room": "3-335"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AG100",
+                "Room": "3-335"
+            }
+        ]
+    },
+    "Tele-G2_EBU6475": {
+        "Code": "EBU6475",
+        "cell_index": "AA5",
+        "Module Name": "Microprocessor System Design",
+        "Class": "6-10",
+        "Programme": "Tele-G2",
+        "schedule": [
+            {
+                "Date": "16-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "AC41",
+                "Room": "3-537"
+            },
+            {
+                "Date": "23-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "AC53",
+                "Room": "3-435"
+            },
+            {
+                "Date": "6-Apr",
+                "Time": "16:35-18:10",
+                "Week": "6",
+                "cell": "AC77",
+                "Room": "3-546"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "AC89",
+                "Room": "3-437"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AD39",
+                "Room": "3-535"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "AD51",
+                "Room": "3-435"
+            },
+            {
+                "Date": "7-Apr",
+                "Time": "13:00-14:35",
+                "Week": "6",
+                "cell": "AD75",
+                "Room": "3-535"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "AD87",
+                "Room": "3-335"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "AE36",
+                "Room": "3-535"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "AE48",
+                "Room": "3-437"
+            },
+            {
+                "Date": "8-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "AE72",
+                "Room": "3-537"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "AE84",
+                "Room": "3-335"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AF39",
+                "Room": "3-537"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "13:00-14:35",
+                "Week": "4",
+                "cell": "AF51",
+                "Room": "3-435"
+            },
+            {
+                "Date": "9-Apr",
+                "Time": "13:00-14:35",
+                "Week": "6",
+                "cell": "AF75",
+                "Room": "3-537"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "13:00-14:35",
+                "Week": "7",
+                "cell": "AF87",
+                "Room": "3-535"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "08:00-09:35",
+                "Week": "3",
+                "cell": "AG35",
+                "Room": "3-535"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "08:00-09:35",
+                "Week": "4",
+                "cell": "AG47",
+                "Room": "3-435"
+            },
+            {
+                "Date": "10-Apr",
+                "Time": "08:00-09:35",
+                "Week": "6",
+                "cell": "AG71",
+                "Room": "3-433"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "AG83",
+                "Room": "3-435"
+            }
+        ]
+    },
+    "Tele-G2_EBU6366": {
+        "Code": "EBU6366",
+        "cell_index": "AA6",
+        "Module Name": "Microwave, Millimeter and Optical Transmission",
+        "Class": "6-10",
+        "Programme": "Tele-G2",
+        "schedule": [
+            {
+                "Date": "9-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "AC29",
+                "Room": "3-435"
+            },
+            {
+                "Date": "16-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "AC40",
+                "Room": "3-537"
+            },
+            {
+                "Date": "18-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "AC125",
+                "Room": "4-238"
+            },
+            {
+                "Date": "25-May",
+                "Time": "14:45-16:25",
+                "Week": "13",
+                "cell": "AC136",
+                "Room": "3-537"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AD27",
+                "Room": "3-433"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "AD41",
+                "Room": "3-535"
+            },
+            {
+                "Date": "19-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "AD123",
+                "Room": "3-433"
+            },
+            {
+                "Date": "26-May",
+                "Time": "16:35-18:10",
+                "Week": "13",
+                "cell": "AD137",
+                "Room": "3-535"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "AE24",
+                "Room": "3-433"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "08:00-09:35",
+                "Week": "3",
+                "cell": "AE35",
+                "Room": "3-435"
+            },
+            {
+                "Date": "20-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "AE120",
+                "Room": "3-333"
+            },
+            {
+                "Date": "27-May",
+                "Time": "08:00-09:35",
+                "Week": "13",
+                "cell": "AE131",
+                "Room": "3-335"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AF27",
+                "Room": "3-435"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "AF36",
+                "Room": "3-433"
+            },
+            {
+                "Date": "21-May",
+                "Time": "13:00-14:35",
+                "Week": "12",
+                "cell": "AF123",
+                "Room": "3-535"
+            },
+            {
+                "Date": "28-May",
+                "Time": "09:50-11:25",
+                "Week": "13",
+                "cell": "AF132",
+                "Room": "3-535"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "AG23",
+                "Room": "3-433"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "AG40",
+                "Room": "3-435"
+            },
+            {
+                "Date": "22-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "AG119",
+                "Room": "3-433"
+            },
+            {
+                "Date": "29-May",
+                "Time": "14:45-16:25",
+                "Week": "13",
+                "cell": "AG136",
+                "Room": "3-535"
+            }
+        ]
+    },
+    "Tele-G2_EBU5606": {
+        "Code": "EBU5606",
+        "cell_index": "AA7",
+        "Module Name": "Product Development and Marketing",
+        "Class": "6-10",
+        "Programme": "Tele-G2",
+        "schedule": [
+            {
+                "Date": "23-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "AC52",
+                "Room": "3-435"
+            },
+            {
+                "Date": "30-Mar",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AC64",
+                "Room": "3-546"
+            },
+            {
+                "Date": "11-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "AC112",
+                "Room": "3-333"
+            },
+            {
+                "Date": "18-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "AC124",
+                "Room": "4-238"
+            },
+            {
+                "Date": "24-Mar",
+                "Time": "16:35-18:10",
+                "Week": "4",
+                "cell": "AD53",
+                "Room": "3-333"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "AD65",
+                "Room": "3-435"
+            },
+            {
+                "Date": "12-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "AD113",
+                "Room": "3-435"
+            },
+            {
+                "Date": "19-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "AD125",
+                "Room": "3-435"
+            },
+            {
+                "Date": "25-Mar",
+                "Time": "08:00-09:35",
+                "Week": "4",
+                "cell": "AE47",
+                "Room": "3-437"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "08:00-09:35",
+                "Week": "5",
+                "cell": "AE59",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-May",
+                "Time": "08:00-09:35",
+                "Week": "11",
+                "cell": "AE107",
+                "Room": "3-537"
+            },
+            {
+                "Date": "20-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "AE119",
+                "Room": "3-539"
+            },
+            {
+                "Date": "26-Mar",
+                "Time": "09:50-11:25",
+                "Week": "4",
+                "cell": "AF48",
+                "Room": "3-435"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "AF60",
+                "Room": "3-535"
+            },
+            {
+                "Date": "14-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "AF108",
+                "Room": "3-537"
+            },
+            {
+                "Date": "21-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "AF120",
+                "Room": "3-537"
+            },
+            {
+                "Date": "27-Mar",
+                "Time": "14:45-16:25",
+                "Week": "4",
+                "cell": "AG52",
+                "Room": "3-435"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AG64",
+                "Room": "3-537"
+            },
+            {
+                "Date": "15-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "AG112",
+                "Room": "3-537"
+            },
+            {
+                "Date": "22-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "AG124",
+                "Room": "3-546"
+            }
+        ]
+    },
+    "IoT1_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "AI4",
+        "Module Name": "Software Engineering",
+        "Class": "11-16",
+        "Programme": "IoT1",
+        "schedule": [
+            {
+                "Date": "2-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "AK16",
+                "Room": "3-546"
+            },
+            {
+                "Date": "9-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AK28",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "AK88",
+                "Room": "3-333"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AK100",
+                "Room": "3-546"
+            },
+            {
+                "Date": "3-Mar",
+                "Time": "16:35-18:10",
+                "Week": "1",
+                "cell": "AL17",
+                "Room": "3-333"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "AL29",
+                "Room": "3-333"
+            },
+            {
+                "Date": "14-Apr",
+                "Time": "16:35-18:10",
+                "Week": "7",
+                "cell": "AL89",
+                "Room": "3-333"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "AL101",
+                "Room": "3-333"
+            },
+            {
+                "Date": "4-Mar",
+                "Time": "08:00-09:35",
+                "Week": "1",
+                "cell": "AM11",
+                "Room": "3-535"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "08:00-09:35",
+                "Week": "2",
+                "cell": "AM23",
+                "Room": "3-535"
+            },
+            {
+                "Date": "15-Apr",
+                "Time": "08:00-09:35",
+                "Week": "7",
+                "cell": "AM83",
+                "Room": "3-435"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "08:00-09:35",
+                "Week": "8",
+                "cell": "AM95",
+                "Room": "3-535"
+            },
+            {
+                "Date": "5-Mar",
+                "Time": "09:50-11:25",
+                "Week": "1",
+                "cell": "AN12",
+                "Room": "3-535"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "AN24",
+                "Room": "3-337"
+            },
+            {
+                "Date": "16-Apr",
+                "Time": "09:50-11:25",
+                "Week": "7",
+                "cell": "AN84",
+                "Room": "3-437"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "AN96",
+                "Room": "3-535"
+            },
+            {
+                "Date": "6-Mar",
+                "Time": "14:45-16:25",
+                "Week": "1",
+                "cell": "AO16",
+                "Room": "3-535"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AO28",
+                "Room": "3-535"
+            },
+            {
+                "Date": "17-Apr",
+                "Time": "14:45-16:25",
+                "Week": "7",
+                "cell": "AO88",
+                "Room": "3-437"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AO100",
+                "Room": "3-535"
+            }
+        ]
+    },
+    "IoT1_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "AI5",
+        "Module Name": "Embedded Systems",
+        "Class": "11-13",
+        "Programme": "IoT1",
+        "schedule": [
+            {
+                "Date": "9-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "AK29",
+                "Room": "3-537"
+            },
+            {
+                "Date": "16-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "AK41",
+                "Room": "4-238"
+            },
+            {
+                "Date": "30-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "AK65",
+                "Room": "4-238"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "AK101",
+                "Room": "3-546"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AL27",
+                "Room": "3-417"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AL39",
+                "Room": "3-211"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "AL63",
+                "Room": "3-537"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "AL99",
+                "Room": "3-335"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "AM24",
+                "Room": "3-535"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "AM36",
+                "Room": "3-337"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "AM60",
+                "Room": "4-238"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "AM96",
+                "Room": "3-535"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AN27",
+                "Room": "3-535"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AN39",
+                "Room": "3-539"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "AN63",
+                "Room": "3-519"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "AN99",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "09:50-11:25",
+                "Week": "2",
+                "cell": "AO24",
+                "Room": "3-519"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "09:50-11:25",
+                "Week": "3",
+                "cell": "AO36",
+                "Room": "3-535"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "AO60",
+                "Room": "3-437"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "09:50-11:25",
+                "Week": "8",
+                "cell": "AO96",
+                "Room": "3-519"
+            }
+        ]
+    },
+    "IoT1_EBU6408": {
+        "Code": "EBU6408",
+        "cell_index": "AI6",
+        "Module Name": "Sensors and Radio Frequency Identification",
+        "Class": "11-16",
+        "Programme": "IoT1",
+        "schedule": [
+            {
+                "Date": "30-Mar",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AK64",
+                "Room": "4-238"
+            },
+            {
+                "Date": "6-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "AK76",
+                "Room": "3-333"
+            },
+            {
+                "Date": "11-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "AK112",
+                "Room": "3-539"
+            },
+            {
+                "Date": "18-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "AK124",
+                "Room": "3-333"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "AL65",
+                "Room": "3-333"
+            },
+            {
+                "Date": "7-Apr",
+                "Time": "16:35-18:10",
+                "Week": "6",
+                "cell": "AL77",
+                "Room": "3-333"
+            },
+            {
+                "Date": "12-May",
+                "Time": "16:35-18:10",
+                "Week": "11",
+                "cell": "AL113",
+                "Room": "3-333"
+            },
+            {
+                "Date": "19-May",
+                "Time": "16:35-18:10",
+                "Week": "12",
+                "cell": "AL125",
+                "Room": "3-333"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "08:00-09:35",
+                "Week": "5",
+                "cell": "AM59",
+                "Room": "4-238"
+            },
+            {
+                "Date": "8-Apr",
+                "Time": "08:00-09:35",
+                "Week": "6",
+                "cell": "AM71",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-May",
+                "Time": "08:00-09:35",
+                "Week": "11",
+                "cell": "AM107",
+                "Room": "3-540"
+            },
+            {
+                "Date": "20-May",
+                "Time": "08:00-09:35",
+                "Week": "12",
+                "cell": "AM119",
+                "Room": "3-540"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "09:50-11:25",
+                "Week": "5",
+                "cell": "AN60",
+                "Room": "3-537"
+            },
+            {
+                "Date": "9-Apr",
+                "Time": "09:50-11:25",
+                "Week": "6",
+                "cell": "AN72",
+                "Room": "3-537"
+            },
+            {
+                "Date": "14-May",
+                "Time": "09:50-11:25",
+                "Week": "11",
+                "cell": "AN108",
+                "Room": "3-546"
+            },
+            {
+                "Date": "21-May",
+                "Time": "09:50-11:25",
+                "Week": "12",
+                "cell": "AN120",
+                "Room": "3-546"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AO64",
+                "Room": "3-546"
+            },
+            {
+                "Date": "10-Apr",
+                "Time": "14:45-16:25",
+                "Week": "6",
+                "cell": "AO76",
+                "Room": "3-537"
+            },
+            {
+                "Date": "15-May",
+                "Time": "14:45-16:25",
+                "Week": "11",
+                "cell": "AO112",
+                "Room": "3-539"
+            },
+            {
+                "Date": "22-May",
+                "Time": "14:45-16:25",
+                "Week": "12",
+                "cell": "AO124",
+                "Room": "3-540"
+            }
+        ]
+    },
+    "IoT2_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "AQ4",
+        "Module Name": "Embedded Systems",
+        "Class": "11-13",
+        "Programme": "IoT2",
+        "schedule": [
+            {
+                "Date": "9-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AS27",
+                "Room": "3-546"
+            },
+            {
+                "Date": "16-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AS39",
+                "Room": "3-546"
+            },
+            {
+                "Date": "30-Mar",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "AS63",
+                "Room": "3-546"
+            },
+            {
+                "Date": "20-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "AS99",
+                "Room": "3-546"
+            },
+            {
+                "Date": "10-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AT28",
+                "Room": "3-433"
+            },
+            {
+                "Date": "17-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "AT40",
+                "Room": "3-337"
+            },
+            {
+                "Date": "31-Mar",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AT64",
+                "Room": "3-337"
+            },
+            {
+                "Date": "21-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AT100",
+                "Room": "3-433"
+            },
+            {
+                "Date": "11-Mar",
+                "Time": "13:00-14:35",
+                "Week": "2",
+                "cell": "AU27",
+                "Room": "3-433"
+            },
+            {
+                "Date": "18-Mar",
+                "Time": "13:00-14:35",
+                "Week": "3",
+                "cell": "AU39",
+                "Room": "3-433"
+            },
+            {
+                "Date": "1-Apr",
+                "Time": "13:00-14:35",
+                "Week": "5",
+                "cell": "AU63",
+                "Room": "3-433"
+            },
+            {
+                "Date": "22-Apr",
+                "Time": "13:00-14:35",
+                "Week": "8",
+                "cell": "AU99",
+                "Room": "3-433"
+            },
+            {
+                "Date": "12-Mar",
+                "Time": "14:45-16:25",
+                "Week": "2",
+                "cell": "AV28",
+                "Room": "3-537"
+            },
+            {
+                "Date": "19-Mar",
+                "Time": "14:45-16:25",
+                "Week": "3",
+                "cell": "AV40",
+                "Room": "3-537"
+            },
+            {
+                "Date": "2-Apr",
+                "Time": "14:45-16:25",
+                "Week": "5",
+                "cell": "AV64",
+                "Room": "3-537"
+            },
+            {
+                "Date": "23-Apr",
+                "Time": "14:45-16:25",
+                "Week": "8",
+                "cell": "AV100",
+                "Room": "3-537"
+            },
+            {
+                "Date": "13-Mar",
+                "Time": "16:35-18:10",
+                "Week": "2",
+                "cell": "AW29",
+                "Room": "3-433"
+            },
+            {
+                "Date": "20-Mar",
+                "Time": "16:35-18:10",
+                "Week": "3",
+                "cell": "AW41",
+                "Room": "3-433"
+            },
+            {
+                "Date": "3-Apr",
+                "Time": "16:35-18:10",
+                "Week": "5",
+                "cell": "AW65",
+                "Room": "3-433"
+            },
+            {
+                "Date": "24-Apr",
+                "Time": "16:35-18:10",
+                "Week": "8",
+                "cell": "AW101",
+                "Room": "3-535"
+            }
+        ]
+    }
+}

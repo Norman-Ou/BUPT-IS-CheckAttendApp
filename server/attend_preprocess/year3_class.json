@@ -1,0 +1,142 @@
+{
+    "EIE_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "A4",
+        "Module Name": "Software Engineering",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU6305": {
+        "Code": "EBU6305",
+        "cell_index": "A5",
+        "Module Name": "Interactive Media Design and Production",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU6230": {
+        "Code": "EBU6230",
+        "cell_index": "A6",
+        "Module Name": "Image and Video Processing",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU5408": {
+        "Code": "EBU5408",
+        "cell_index": "A7",
+        "Module Name": "Digital Audio Fundamentals",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "IST_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "J4",
+        "Module Name": "Software Engineering",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "J5",
+        "Module Name": "Embedded Systems",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU6505": {
+        "Code": "EBU6505",
+        "cell_index": "J6",
+        "Module Name": "Reasoning and Agents",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU6307": {
+        "Code": "EBU6307",
+        "cell_index": "J7",
+        "Module Name": "Visual Computing",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "Tele-G1_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "S4",
+        "Module Name": "Software Engineering",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G1_EBU6475": {
+        "Code": "EBU6475",
+        "cell_index": "S5",
+        "Module Name": "Microprocessor System Design",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G1_EBU6366": {
+        "Code": "EBU6366",
+        "cell_index": "S6",
+        "Module Name": "Microwave, Millimeter and Optical Transmission",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G1_EBU5606": {
+        "Code": "EBU5606",
+        "cell_index": "S7",
+        "Module Name": "Product Development and Marketing",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G2_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "AA4",
+        "Module Name": "Software Engineering",
+        "Class": "6-10",
+        "Programme": "Tele-G2"
+    },
+    "Tele-G2_EBU6475": {
+        "Code": "EBU6475",
+        "cell_index": "AA5",
+        "Module Name": "Microprocessor System Design",
+        "Class": "6-10",
+        "Programme": "Tele-G2"
+    },
+    "Tele-G2_EBU6366": {
+        "Code": "EBU6366",
+        "cell_index": "AA6",
+        "Module Name": "Microwave, Millimeter and Optical Transmission",
+        "Class": "6-10",
+        "Programme": "Tele-G2"
+    },
+    "Tele-G2_EBU5606": {
+        "Code": "EBU5606",
+        "cell_index": "AA7",
+        "Module Name": "Product Development and Marketing",
+        "Class": "6-10",
+        "Programme": "Tele-G2"
+    },
+    "IoT1_EBU6304": {
+        "Code": "EBU6304",
+        "cell_index": "AI4",
+        "Module Name": "Software Engineering",
+        "Class": "11-16",
+        "Programme": "IoT1"
+    },
+    "IoT1_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "AI5",
+        "Module Name": "Embedded Systems",
+        "Class": "11-13",
+        "Programme": "IoT1"
+    },
+    "IoT1_EBU6408": {
+        "Code": "EBU6408",
+        "cell_index": "AI6",
+        "Module Name": "Sensors and Radio Frequency Identification",
+        "Class": "11-16",
+        "Programme": "IoT1"
+    },
+    "IoT2_EBU5477": {
+        "Code": "EBU5477",
+        "cell_index": "AQ4",
+        "Module Name": "Embedded Systems",
+        "Class": "11-13",
+        "Programme": "IoT2"
+    }
+}

@@ -78,11 +78,12 @@ def get_dates():
 @app.get('/records')
 def get_records(date: str):
     """Return all records for a given date, ordered by time then indexNo."""
-    rows = con.execute(
+    df = con.execute(
         "SELECT * FROM attend WHERE date=? ORDER BY time, indexNo",
         [date],
-    ).df().to_dict(orient='records')
-    return rows
+    ).df()
+    df = df.astype(object).where(df.notna(), other=None)
+    return df.to_dict(orient='records')
 
 
 # ── PATCH /records/{id} ────────────────────────────────────────────

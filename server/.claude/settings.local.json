@@ -13,7 +13,15 @@
       "Bash(python -c \"import pandas as pd; df = pd.read_excel\\('2026-03-13-1833-export.xlsx'\\); print\\(df.columns.tolist\\(\\)\\); print\\(df.head\\(2\\).to_string\\(\\)\\)\")",
       "Bash(pip install:*)",
       "Bash(python -c \"import pandas as pd; df = pd.read_excel\\('2026-03-13-1833-export.xlsx'\\); print\\(df['Date'].head\\(5\\).tolist\\(\\)\\); print\\(type\\(df['Date'].iloc[0]\\)\\)\")",
-      "Bash(python -c \"\nfrom pathlib import Path\nimport import_xlsx\nimport_xlsx.XLSX_PATH = Path\\('2026-03-13-1833-export.xlsx'\\)\nimport_xlsx.DB_PATH = Path\\('/tmp/test_attend.duckdb'\\)\nimport_xlsx.import_xlsx\\(preserve=False\\)\n\")"
+      "Bash(python -c \"\nfrom pathlib import Path\nimport import_xlsx\nimport_xlsx.XLSX_PATH = Path\\('2026-03-13-1833-export.xlsx'\\)\nimport_xlsx.DB_PATH = Path\\('/tmp/test_attend.duckdb'\\)\nimport_xlsx.import_xlsx\\(preserve=False\\)\n\")",
+      "Bash(python -c \"import duckdb; con = duckdb.connect\\('data/attend.duckdb'\\); print\\(con.execute\\(\\\\\"SELECT DISTINCT date, day FROM attend ORDER BY date\\\\\"\\).fetchall\\(\\)\\)\")",
+      "Bash(python -c \"\nimport duckdb\ncon = duckdb.connect\\('data/attend.duckdb'\\)\nabbr_map = {'Mon':'Monday','Tue':'Tuesday','Wed':'Wednesday','Thu':'Thursday','Fri':'Friday','Sat':'Saturday','Sun':'Sunday'}\nfor abbr, full in abbr_map.items\\(\\):\n    n = con.execute\\(\\\\\"UPDATE attend SET day=? WHERE day=?\\\\\", [full, abbr]\\).rowcount\n    if n: print\\(f'{abbr} -> {full}: {n} rows'\\)\ncon.close\\(\\)\nprint\\('Done'\\)\n\")",
+      "Bash(python -c \"\nimport duckdb\ncon = duckdb.connect\\('data/attend.duckdb'\\)\nrows = con.execute\\(\\\\\"SELECT DISTINCT day FROM attend ORDER BY day\\\\\"\\).fetchall\\(\\)\nprint\\([r[0] for r in rows]\\)\ncon.close\\(\\)\n\")",
+      "Bash(python -c \"\nimport duckdb\ncon = duckdb.connect\\('data/attend.duckdb'\\)\nrows = con.execute\\(\\\\\"SELECT COUNT\\(*\\), date, day FROM attend WHERE date='23-Mar' GROUP BY date, day\\\\\"\\).fetchall\\(\\)\nprint\\(rows\\)\ncon.close\\(\\)\n\")",
+      "Bash(curl -s \"http://127.0.0.1:17800/dates\" | python -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r\\) for r in d if '23' in r['date']]\")",
+      "Bash(curl -s \"http://127.0.0.1:17800/dates\")",
+      "Bash(kill 3328326)",
+      "Bash(curl -s \"http://127.0.0.1:17800/records?date=23-Mar\")"
     ]
   }
 }

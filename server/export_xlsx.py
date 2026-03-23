@@ -15,7 +15,7 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
-DB_PATH = Path(__file__).parent / 'data' / 'attend.duckdb.bak.20260313-100126'
+DB_PATH = Path(__file__).parent / 'data' / 'attend.duckdb'
 
 
 def export_xlsx(out_path: Path = None, filled_only: bool = False):
@@ -32,9 +32,11 @@ def export_xlsx(out_path: Path = None, filled_only: bool = False):
     df = con.execute(query).df()
     con.close()
 
+    # ── Drop unwanted columns ──────────────────────────────────────
+    df = df.drop(columns=['id', 'photoUploaded'], errors='ignore')
+
     # ── Rename columns back to human-readable ─────────────────────
     df = df.rename(columns={
-        'id':                     'ID',
         'indexNo':                'Index No.',
         'week':                   'Week',
         'day':                    'Day',
@@ -51,13 +53,11 @@ def export_xlsx(out_path: Path = None, filled_only: bool = False):
         'studentNumInClassroom':  'Student Num In Classroom',
         'percent':                'Percent (%)',
         'by':                     'Filled By',
-        'photoUploaded':          'Photo Uploaded',
         'remark':                 'Remark',
     })
 
     if out_path is None:
-        ts = datetime.now().strftime('%Y%m%d_%H%M%S')
-        out_path = Path(__file__).parent / f'export_{ts}.xlsx'
+        out_path = Path(__file__).parent / '2526 Sem2-Student Attendance.xlsx'
 
     df.to_excel(out_path, index=False)
     print(f'Exported {len(df)} records → {out_path}')

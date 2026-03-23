@@ -1,0 +1,156 @@
+{
+    "EIE_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "A4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU5315": {
+        "Code": "EBU5315",
+        "cell_index": "A5",
+        "Module Name": "Interactive Media Design and Production",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "A6",
+        "Module Name": "Digital Circuit Design",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "EIE_EBU5376": {
+        "Code": "EBU5376",
+        "cell_index": "A7",
+        "Module Name": "Digital Signal Processing  ",
+        "Class": "17-20",
+        "Programme": "EIE"
+    },
+    "IST_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "J4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU5017": {
+        "Code": "EBU5017",
+        "cell_index": "J5",
+        "Module Name": "AI Law",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "J6",
+        "Module Name": "Digital Circuit Design",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "IST_EBU5503": {
+        "Code": "EBU5503",
+        "cell_index": "J7",
+        "Module Name": "Database Systems",
+        "Class": "21-24",
+        "Programme": "IST"
+    },
+    "Tele-G1_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "S4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G1_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "S5",
+        "Module Name": "Digital Circuit Design",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G1_EBU5376": {
+        "Code": "EBU5376",
+        "cell_index": "S6",
+        "Module Name": "Digital Signal Processing  ",
+        "Class": "1~5",
+        "Programme": "Tele-G1"
+    },
+    "Tele-G2_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "AA4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "6~10",
+        "Programme": "Tele-G2"
+    },
+    "Tele-G2_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "AA5",
+        "Module Name": "Digital Circuit Design",
+        "Class": "6~10",
+        "Programme": "Tele-G2"
+    },
+    "Tele-G2_EBU5376": {
+        "Code": "EBU5376",
+        "cell_index": "AA6",
+        "Module Name": "Digital Signal Processing  ",
+        "Class": "6~10",
+        "Programme": "Tele-G2"
+    },
+    "IoT1_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "AI4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "11~13",
+        "Programme": "IoT1"
+    },
+    "IoT1_EBU5212": {
+        "Code": "EBU5212",
+        "cell_index": "AI5",
+        "Module Name": "Communication and Networks",
+        "Class": "11~16",
+        "Programme": "IoT1"
+    },
+    "IoT1_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "AI6",
+        "Module Name": "Digital Circuit Design",
+        "Class": "11~13",
+        "Programme": "IoT1"
+    },
+    "IoT1_EBU5503": {
+        "Code": "EBU5503",
+        "cell_index": "AI7",
+        "Module Name": "Database Systems",
+        "Class": "11~13",
+        "Programme": "IoT1"
+    },
+    "IoT2_EBU4211": {
+        "Code": "EBU4211",
+        "cell_index": "AQ4",
+        "Module Name": "Object-Oriented Programming",
+        "Class": "14~16",
+        "Programme": "IoT2"
+    },
+    "IoT2_EBU5212": {
+        "Code": "EBU5212",
+        "cell_index": "AQ5",
+        "Module Name": "Communication and Networks",
+        "Class": "11~16",
+        "Programme": "IoT2"
+    },
+    "IoT2_EBU4202": {
+        "Code": "EBU4202",
+        "cell_index": "AQ6",
+        "Module Name": "Digital Circuit Design",
+        "Class": "14~16",
+        "Programme": "IoT2"
+    },
+    "IoT2_EBU5503": {
+        "Code": "EBU5503",
+        "cell_index": "AQ7",
+        "Module Name": "Database Systems",
+        "Class": "14~16",
+        "Programme": "IoT2"
+    }
+}
