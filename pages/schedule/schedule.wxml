@@ -36,14 +36,14 @@
             <text class="row-module">
               <text class="row-code {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.moduleCode}}</text> {{item.module}}
             </text>
-            <view wx:if="{{item.hasPhoto === true}}" class="photo-badge {{wechatId === 'Ruizhe' ? 'photo-badge-ruizhe' : ''}}">已传图</view>
+            <view wx:if="{{item.hasPhoto === true}}" class="photo-badge {{item.by === 'Ruizhe' ? 'photo-badge-ruizhe' : ''}}">已传图</view>
           </view>
           <view class="row-bottom">
             <text class="row-time">{{item.time}}</text>
             <text class="row-lecturer">{{item.lecturer}}</text>
             <text class="row-room {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.room}}</text>
             <view wx:if="{{item.by}}" class="row-operator">
-              <text class="row-filled {{wechatId === 'Ruizhe' ? 'row-filled-ruizhe' : ''}}">{{item.studentNumInClassroom}}/{{item.totalStudentNum}} {{item.percent}}%</text>
+              <text class="row-filled {{item.by === 'Ruizhe' ? 'row-filled-ruizhe' : ''}}">{{item.studentNumInClassroom}}/{{item.totalStudentNum}} {{item.percent}}%</text>
             </view>
           </view>
           <!-- 隐藏的 image：始终发请求，双向同步 DB 的 photoUploaded 状态 -->
