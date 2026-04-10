@@ -10,6 +10,7 @@ Use cloudflared to expose externally.
 
 import logging
 import sys
+import threading
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
@@ -45,6 +46,7 @@ if not Path(DB_PATH).exists():
 
 # ── Single connection (single-process server) ─────────────────────
 con = duckdb.connect(DB_PATH)
+db_lock = threading.Lock()
 
 app = FastAPI(title='Attendance API')
 
@@ -68,9 +70,10 @@ async def log_requests(request: Request, call_next):
 @app.get('/dates')
 def get_dates():
     """Return all distinct dates (for the date picker)."""
-    rows = con.execute(
-        "SELECT DISTINCT date, day FROM attend ORDER BY date"
-    ).fetchall()
+    with db_lock:
+        rows = con.execute(
+            "SELECT DISTINCT date, day FROM attend ORDER BY date"
+        ).fetchall()
     return [{'date': r[0], 'day': r[1]} for r in rows]
 
 
@@ -78,10 +81,11 @@ def get_dates():
 @app.get('/records')
 def get_records(date: str):
     """Return all records for a given date, ordered by time then indexNo."""
-    df = con.execute(
-        "SELECT * FROM attend WHERE date=? ORDER BY time, indexNo",
-        [date],
-    ).df()
+    with db_lock:
+        df = con.execute(
+            "SELECT * FROM attend WHERE date=? ORDER BY time, indexNo",
+            [date],
+        ).df()
     df = df.astype(object).where(df.notna(), other=None)
     return df.to_dict(orient='records')
 
@@ -105,9 +109,9 @@ def update_record(record_id: str, body: UpdateBody):
     values = list(updates.values()) + [record_id]
     sql = f'UPDATE attend SET {sets} WHERE id=?'
     logger.info(f'[{now()}] [PATCH] id={record_id} updates={updates}')
-    con.execute(sql, values)
-    # verify
-    row = con.execute('SELECT id, "studentNumInClassroom", "by" FROM attend WHERE id=?', [record_id]).fetchone()
+    with db_lock:
+        con.execute(sql, values)
+        row = con.execute('SELECT id, "studentNumInClassroom", "by" FROM attend WHERE id=?', [record_id]).fetchone()
     logger.info(f'[{now()}] [PATCH] after update: {row}')
     return {'ok': True}
 
@@ -115,7 +119,8 @@ def update_record(record_id: str, body: UpdateBody):
 # ── Healthcheck ────────────────────────────────────────────────────
 @app.get('/health')
 def health():
-    count = con.execute('SELECT COUNT(*) FROM attend').fetchone()[0]
+    with db_lock:
+        count = con.execute('SELECT COUNT(*) FROM attend').fetchone()[0]
     return {'ok': True, 'records': count}
 
 
