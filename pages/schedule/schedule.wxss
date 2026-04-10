@@ -325,6 +325,30 @@ page {
   font-weight: 600;
 }
 
+.modal-nav-btn {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: rgb(20, 53, 130);
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modal-confirm-wide {
+  flex: 2;
+}
+
+.modal-nav-idx {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 24rpx;
+  margin-bottom: -8rpx;
+}
+
 .ref-photo {
   width: 100%;
   display: block;

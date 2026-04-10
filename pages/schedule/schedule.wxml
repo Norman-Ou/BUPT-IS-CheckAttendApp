@@ -181,8 +181,11 @@
     <image class="ref-photo" src="{{refRecord.photoUrl}}" mode="widthFix" />
     <text wx:if="{{refMatchLevel === 2}}" class="modal-desc modal-hint">（已放宽：不限应到人数）</text>
     <text wx:if="{{refMatchLevel === 3}}" class="modal-desc modal-hint">（已放宽：不限应到人数和教室）</text>
+    <text class="modal-nav-idx">{{refMatchIdx + 1}} / {{refMatches.length}}</text>
     <view class="modal-btns">
-      <view class="modal-confirm" bindtap="onSyncFromRef">同步</view>
+      <view class="modal-nav-btn" bindtap="onRefPrev">↑</view>
+      <view class="modal-nav-btn" bindtap="onRefNext">↓</view>
+      <view class="modal-confirm modal-confirm-wide" bindtap="onSyncFromRef">同步</view>
     </view>
   </view>
 </view>

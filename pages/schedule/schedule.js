@@ -450,8 +450,8 @@ Page({
     if (!rec) return
 
     const { dateRaw, dateIndex, apiUrl } = this.data
-    const prevDates = dateRaw.slice(0, dateIndex).reverse()
-    if (!prevDates.length) {
+    const allDates = [...dateRaw].reverse()
+    if (!allDates.length) {
       wx.showToast({ title: '没有历史记录', icon: 'none' })
       return
     }
@@ -460,7 +460,7 @@ Page({
 
     try {
       const allPrevData = await Promise.all(
-        prevDates.map(d => new Promise((resolve, reject) => {
+        allDates.map(d => new Promise((resolve, reject) => {
           wx.request({
             url: `${apiUrl}/records`,
             method: 'GET',
@@ -475,22 +475,42 @@ Page({
       const { moduleCode, lecturer, room, totalStudentNum } = rec
       let found = null, matchLevel = 0
 
+      const getRoomGroup = rm => {
+        const parts = rm.split('-')
+        if (parts.length < 2 || parts[1].length < 2) return rm
+        return parts[0] + '-' + parts[1][1]
+      }
+
       const criteria = [
-        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.room === room && r.totalStudentNum === totalStudentNum && r.photoUploaded,
-        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.room === room && r.photoUploaded,
-        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.photoUploaded,
+        r => r.lecturer === lecturer && r.room === room && r.moduleCode === moduleCode && r.totalStudentNum === totalStudentNum && r.photoUploaded,
+        r => r.lecturer === lecturer && r.room === room && r.moduleCode === moduleCode && r.photoUploaded,
+        r => r.lecturer === lecturer && r.room === room && r.moduleCode !== moduleCode && r.photoUploaded,
+        r => r.lecturer === lecturer && r.room !== room && getRoomGroup(r.room) === getRoomGroup(room) && r.photoUploaded,
       ]
 
-      for (let level = 0; level < 3 && !found; level++) {
+      const allMatches = []
+      const seenIds = new Set()
+      for (let level = 0; level < criteria.length; level++) {
         for (const { date, records } of allPrevData) {
-          const match = records.find(criteria[level])
-          if (match) { found = { date, record: match }; matchLevel = level + 1; break }
+          records.filter(criteria[level]).forEach(record => {
+            if (!seenIds.has(record.id)) {
+              seenIds.add(record.id)
+              const photoUrl = this._buildPhotoUrl(date, record.time, record.room)
+              allMatches.push({ date, record, photoUrl, matchLevel: level + 1 })
+            }
+          })
         }
       }
 
-      if (found) {
-        const photoUrl = this._buildPhotoUrl(found.date, found.record.time, found.record.room)
-        this.setData({ showRefModal: true, refRecord: { ...found.record, date: found.date, photoUrl }, refMatchLevel: matchLevel })
+      if (allMatches.length) {
+        const first = allMatches[0]
+        this.setData({
+          showRefModal: true,
+          refMatches: allMatches,
+          refMatchIdx: 0,
+          refRecord: { ...first.record, date: first.date, photoUrl: first.photoUrl },
+          refMatchLevel: first.matchLevel,
+        })
       } else {
         wx.showToast({ title: '未找到历史参考', icon: 'none' })
       }
@@ -539,8 +559,22 @@ Page({
     })
   },
 
+  onRefPrev() {
+    const { refMatches, refMatchIdx } = this.data
+    const idx = (refMatchIdx - 1 + refMatches.length) % refMatches.length
+    const m = refMatches[idx]
+    this.setData({ refMatchIdx: idx, refRecord: { ...m.record, date: m.date, photoUrl: m.photoUrl }, refMatchLevel: m.matchLevel })
+  },
+
+  onRefNext() {
+    const { refMatches, refMatchIdx } = this.data
+    const idx = (refMatchIdx + 1) % refMatches.length
+    const m = refMatches[idx]
+    this.setData({ refMatchIdx: idx, refRecord: { ...m.record, date: m.date, photoUrl: m.photoUrl }, refMatchLevel: m.matchLevel })
+  },
+
   onCloseRefModal() {
-    this.setData({ showRefModal: false, refRecord: null, refMatchLevel: 0 })
+    this.setData({ showRefModal: false, refRecord: null, refMatches: [], refMatchIdx: 0, refMatchLevel: 0 })
   },
 
   noop() {},
