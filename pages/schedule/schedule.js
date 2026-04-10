@@ -100,8 +100,8 @@ function apiPatch(apiUrl, id, data) {
 
 // ── Page ───────────────────────────────────────────────────────────
 
-let _lastTapTime = 0
-let _lastTapIdx  = -1
+let _lastTapTime     = 0
+let _lastTapIdx      = -1
 
 Page({
   data: {
@@ -566,6 +566,10 @@ Page({
 
   onTapNickname() {
     this.setData({ showVisibilityModal: true })
+  },
+
+  onReLogin() {
+    this.setData({ showVisibilityModal: false, showLoginModal: true, inputName: '' })
   },
 
   onCloseVisibilityModal() {

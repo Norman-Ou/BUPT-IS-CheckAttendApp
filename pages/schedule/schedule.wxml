@@ -159,7 +159,10 @@
 <!-- 显示设置弹窗（点击用户名触发）-->
 <view wx:if="{{showVisibilityModal}}" class="modal-mask" bindtap="onCloseVisibilityModal">
   <view class="modal-box" catchtap="noop">
-    <text class="modal-title">显示设置</text>
+    <view class="modal-header-row">
+      <text class="modal-title">显示设置</text>
+      <view class="modal-relogin-btn" bindtap="onReLogin">切换用户</view>
+    </view>
     <view class="modal-setting-row">
       <text class="modal-setting-label">显示已隐藏的课程</text>
       <switch checked="{{showHiddenItems}}" bindchange="onToggleShowHidden" color="rgb(20,53,130)" />

@@ -396,3 +396,11 @@ page {
   font-size: 30rpx;
   color: #444;
 }
+
+.modal-relogin-btn {
+  font-size: 24rpx;
+  color: #fff;
+  background: #888;
+  border-radius: 20rpx;
+  padding: 6rpx 20rpx;
+}
