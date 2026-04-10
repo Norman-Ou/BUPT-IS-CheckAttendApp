@@ -1,5 +1,5 @@
 // schedule.js
-const DEFAULT_API = 'https://approval-fantastic-online-textile.trycloudflare.com'
+const DEFAULT_API = 'https://advertisements-children-tan-attempts.trycloudflare.com'
 
 const { hmacSha1Base64 } = require('../../utils/hmac_sha1')
 const OSS_BUCKET     = 'us-aisocial'
@@ -100,6 +100,9 @@ function apiPatch(apiUrl, id, data) {
 
 // ── Page ───────────────────────────────────────────────────────────
 
+let _lastTapTime = 0
+let _lastTapIdx  = -1
+
 Page({
   data: {
     dateList: [],
@@ -119,6 +122,13 @@ Page({
     apiUrl: DEFAULT_API,
     showApiModal: false,
     inputApiUrl: '',
+    showRefModal: false,
+    refRecord: null,
+    refMatchLevel: 0,
+    syncFromRef: false,
+    refHistoricalCount: 0,
+    showRemarkModal: false,
+    inputRemark: '',
   },
 
   onLoad() {
@@ -233,21 +243,31 @@ Page({
   onPhotoError(e) {
     const idx = e.currentTarget.dataset.idx
     const rec = this.data.classes[idx]
-    console.log('[photoError] idx=', idx, 'id=', rec && rec.id)
     const update = { [`classes[${idx}].hasPhoto`]: false }
     if (this.data.selectedIdx === idx) {
       update.selectedRecord = { ...this.data.selectedRecord, hasPhoto: false }
     }
     this.setData(update)
-    if (rec) {
+    // 只有 DB 里标记为 true 时才往回修正，避免对未上传的记录发无效请求
+    if (rec && rec.hasPhoto) {
+      console.log('[photoError] DB marked true but image missing, correcting. id=', rec.id)
       apiPatch(this.data.apiUrl, rec.id, { photoUploaded: false })
-        .then(() => console.log('[photoError] DB updated ok'))
         .catch(err => console.error('[photoError] DB update failed', err))
     }
   },
 
   onSelectRow(e) {
     const idx = e.currentTarget.dataset.idx
+    const now = Date.now()
+    if (idx === _lastTapIdx && now - _lastTapTime < 300) {
+      _lastTapTime = 0
+      _lastTapIdx  = -1
+      const cur = this.data.classes[idx]
+      this.setData({ showRemarkModal: true, inputRemark: cur.remark || '', selectedIdx: idx, selectedRecord: cur })
+      return
+    }
+    _lastTapTime = now
+    _lastTapIdx  = idx
     const cur = this.data.classes[idx]
     const photoExpanded = !cur.photoExpanded
     this.setData({
@@ -296,7 +316,7 @@ Page({
   },
 
   onCancelInput() {
-    this.setData({ showInputModal: false, inputCount: '' })
+    this.setData({ showInputModal: false, inputCount: '', syncFromRef: false, refHistoricalCount: 0 })
   },
 
   onConfirmInput() {
@@ -311,6 +331,8 @@ Page({
     const wechatId = this.data.wechatId
     console.log('[PATCH]', rec.id, { studentNumInClassroom: count, percent, by: wechatId })
     wx.showLoading({ title: '提交中...' })
+    const syncFromRef = this.data.syncFromRef
+    const refRecord = this.data.refRecord
     apiPatch(this.data.apiUrl, rec.id, { studentNumInClassroom: count, percent, by: wechatId })
       .then(() => {
         wx.hideLoading()
@@ -319,8 +341,30 @@ Page({
           i === idx ? { ...c, studentNumInClassroom: count, percent, by: wechatId } : c
         )
         const selectedRecord = { ...rec, studentNumInClassroom: count, percent, by: wechatId }
-        this.setData({ classes, selectedRecord, showInputModal: false, inputCount: '' })
+        this.setData({ classes, selectedRecord, showInputModal: false, inputCount: '', syncFromRef: false, refHistoricalCount: 0 })
         wx.showToast({ title: '提交成功', icon: 'success' })
+        if (syncFromRef && refRecord) {
+          const dateStr = this.data.dateRaw[this.data.dateIndex].date
+          const [dd, monStr] = dateStr.split('-')
+          const mo = MONTHS.indexOf(monStr) + 1
+          const startStr = rec.time.slice(0, rec.time.lastIndexOf('-'))
+          const [hh, mm] = startStr.split(':')
+          const fileName = `${mo}.${dd}_${hh}.${mm}_${rec.room}.jpg`
+          wx.downloadFile({
+            url: refRecord.photoUrl,
+            success: dlRes => {
+              if (dlRes.statusCode !== 200) return
+              ossUpload(dlRes.tempFilePath, OSS_PREFIX + fileName)
+                .then(() => apiPatch(this.data.apiUrl, rec.id, { photoUploaded: true }))
+                .then(() => {
+                  const i = this.data.selectedIdx
+                  const sr = { ...this.data.selectedRecord, hasPhoto: true }
+                  this.setData({ [`classes[${i}].hasPhoto`]: true, selectedRecord: sr })
+                })
+                .catch(err => console.error('[syncPhoto] failed', err))
+            },
+          })
+        }
       })
       .catch(err => {
         wx.hideLoading()
@@ -399,6 +443,104 @@ Page({
   onResetApiUrl() {
     wx.setStorageSync('apiUrl', DEFAULT_API)
     this.setData({ apiUrl: DEFAULT_API, inputApiUrl: DEFAULT_API })
+  },
+
+  async onTapTotalStudentNum() {
+    const rec = this.data.selectedRecord
+    if (!rec) return
+
+    const { dateRaw, dateIndex, apiUrl } = this.data
+    const prevDates = dateRaw.slice(0, dateIndex).reverse()
+    if (!prevDates.length) {
+      wx.showToast({ title: '没有历史记录', icon: 'none' })
+      return
+    }
+
+    wx.showLoading({ title: '查询中...' })
+
+    try {
+      const allPrevData = await Promise.all(
+        prevDates.map(d => new Promise((resolve, reject) => {
+          wx.request({
+            url: `${apiUrl}/records`,
+            method: 'GET',
+            data: { date: d.date },
+            success: res => resolve({ date: d.date, records: res.data }),
+            fail: reject,
+          })
+        }))
+      )
+      wx.hideLoading()
+
+      const { moduleCode, lecturer, room, totalStudentNum } = rec
+      let found = null, matchLevel = 0
+
+      const criteria = [
+        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.room === room && r.totalStudentNum === totalStudentNum && r.photoUploaded,
+        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.room === room && r.photoUploaded,
+        r => r.moduleCode === moduleCode && r.lecturer === lecturer && r.photoUploaded,
+      ]
+
+      for (let level = 0; level < 3 && !found; level++) {
+        for (const { date, records } of allPrevData) {
+          const match = records.find(criteria[level])
+          if (match) { found = { date, record: match }; matchLevel = level + 1; break }
+        }
+      }
+
+      if (found) {
+        const photoUrl = this._buildPhotoUrl(found.date, found.record.time, found.record.room)
+        this.setData({ showRefModal: true, refRecord: { ...found.record, date: found.date, photoUrl }, refMatchLevel: matchLevel })
+      } else {
+        wx.showToast({ title: '未找到历史参考', icon: 'none' })
+      }
+    } catch (err) {
+      wx.hideLoading()
+      console.error(err)
+      wx.showToast({ title: '查询失败', icon: 'error' })
+    }
+  },
+
+  onRemarkInput(e) {
+    this.setData({ inputRemark: e.detail.value })
+  },
+
+  onCancelRemark() {
+    this.setData({ showRemarkModal: false, inputRemark: '' })
+  },
+
+  onConfirmRemark() {
+    const remark = this.data.inputRemark.trim()
+    const rec = this.data.selectedRecord
+    wx.showLoading({ title: '提交中...' })
+    apiPatch(this.data.apiUrl, rec.id, { remark })
+      .then(() => {
+        wx.hideLoading()
+        const idx = this.data.selectedIdx
+        const classes = this.data.classes.map((c, i) => i === idx ? { ...c, remark } : c)
+        const selectedRecord = { ...rec, remark }
+        this.setData({ classes, selectedRecord, showRemarkModal: false, inputRemark: '' })
+        wx.showToast({ title: '已更新', icon: 'success' })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '提交失败', icon: 'error' })
+      })
+  },
+
+  onSyncFromRef() {
+    this.setData({
+      showRefModal: false,
+      showInputModal: true,
+      inputCount: '',
+      syncFromRef: true,
+      refHistoricalCount: this.data.refRecord.studentNumInClassroom,
+    })
+  },
+
+  onCloseRefModal() {
+    this.setData({ showRefModal: false, refRecord: null, refMatchLevel: 0 })
   },
 
   noop() {},

@@ -75,7 +75,7 @@
 
   <!-- 底部操作栏 -->
   <view class="action-bar bottom-bar">
-    <view class="btn btn-gray">
+    <view class="btn btn-gray" bindtap="onTapTotalStudentNum">
       <text class="btn-label">应到人数</text>
       <text class="btn-num">{{selectedRecord ? selectedRecord.totalStudentNum : '-'}}</text>
     </view>
@@ -133,7 +133,8 @@
   <view class="modal-box" catchtap="noop">
     <text class="modal-title">填写实到人数</text>
     <text class="modal-desc">{{selectedRecord.module}}</text>
-    <text class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人</text>
+    <text wx:if="{{syncFromRef}}" class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人-历史 {{refHistoricalCount}} 人</text>
+    <text wx:else class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人</text>
     <input
       class="modal-input"
       type="number"
@@ -145,6 +146,43 @@
     <view class="modal-btns">
       <view class="modal-cancel" bindtap="onCancelInput">取消</view>
       <view class="modal-confirm" bindtap="onConfirmInput">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- Remark 编辑弹窗（双击触发）-->
+<view wx:if="{{showRemarkModal}}" class="modal-mask" bindtap="onCancelRemark">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">编辑 Remark</text>
+    <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
+    <input
+      class="modal-input"
+      type="text"
+      placeholder="输入 Remark（如 Tutorial）"
+      bindinput="onRemarkInput"
+      value="{{inputRemark}}"
+      focus="{{showRemarkModal}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onCancelRemark">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmRemark">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 历史参考记录弹窗 -->
+<view wx:if="{{showRefModal}}" class="modal-mask" bindtap="onCloseRefModal">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">历史参考记录</text>
+    <text class="modal-desc">Index：{{refRecord.indexNo}}　日期：{{refRecord.date}}</text>
+    <text class="modal-desc">{{refRecord.moduleCode}} {{refRecord.moduleName}}</text>
+    <text class="modal-desc">{{refRecord.lecturer}}　{{refRecord.room}}</text>
+    <text class="modal-desc">实到：{{refRecord.studentNumInClassroom}} / {{refRecord.totalStudentNum}} 人</text>
+    <image class="ref-photo" src="{{refRecord.photoUrl}}" mode="widthFix" />
+    <text wx:if="{{refMatchLevel === 2}}" class="modal-desc modal-hint">（已放宽：不限应到人数）</text>
+    <text wx:if="{{refMatchLevel === 3}}" class="modal-desc modal-hint">（已放宽：不限应到人数和教室）</text>
+    <view class="modal-btns">
+      <view class="modal-confirm" bindtap="onSyncFromRef">同步</view>
     </view>
   </view>
 </view>

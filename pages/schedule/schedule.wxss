@@ -316,3 +316,10 @@ page {
   color: #fff;
   font-weight: 600;
 }
+
+.ref-photo {
+  width: 100%;
+  display: block;
+  border-radius: 8rpx;
+  margin: 16rpx 0;
+}
