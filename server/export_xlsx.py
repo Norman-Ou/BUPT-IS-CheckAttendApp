@@ -25,15 +25,21 @@ def export_xlsx(out_path: Path = None, filled_only: bool = False):
 
     con = duckdb.connect(str(DB_PATH))
 
-    query = "SELECT * FROM attend ORDER BY indexNo"
+    base_filter = '"hidden" IS NOT TRUE'
     if filled_only:
-        query = "SELECT * FROM attend WHERE by != '' ORDER BY indexNo"
+        query = f'SELECT * FROM attend WHERE {base_filter} AND "by" != \'\''
+    else:
+        query = f'SELECT * FROM attend WHERE {base_filter}'
 
     df = con.execute(query).df()
     con.close()
 
+    # ── Sort by date (parsed from "D-Mon") then time ───────────────
+    df['_sort_date'] = pd.to_datetime(df['date'] + '-2026', format='%d-%b-%Y', errors='coerce')
+    df = df.sort_values(['_sort_date', 'time']).drop(columns=['_sort_date'])
+
     # ── Drop unwanted columns ──────────────────────────────────────
-    df = df.drop(columns=['id', 'photoUploaded'], errors='ignore')
+    df = df.drop(columns=['id', 'photoUploaded', 'hidden'], errors='ignore')
 
     # ── Rename columns back to human-readable ─────────────────────
     df = df.rename(columns={
