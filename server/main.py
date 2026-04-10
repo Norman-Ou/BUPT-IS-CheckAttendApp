@@ -92,10 +92,11 @@ def get_records(date: str):
 
 # ── PATCH /records/{id} ────────────────────────────────────────────
 class UpdateBody(BaseModel):
-    studentNumInClassroom: Optional[int]  = None
+    studentNumInClassroom: Optional[int]   = None
     percent:               Optional[float] = None
     by:                    Optional[str]   = None
     photoUploaded:         Optional[bool]  = None
+    remark:                Optional[str]   = None
 
 
 @app.patch('/records/{record_id}')
