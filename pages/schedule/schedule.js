@@ -218,6 +218,7 @@ Page({
           hasResult: true,
           scrollIntoView: `item-${targetIdx}`,
         })
+        this._syncPhotos(classes)
       },
       fail: err => {
         wx.hideLoading()
@@ -246,6 +247,7 @@ Page({
   onPhotoError(e) {
     const idx = e.currentTarget.dataset.idx
     const rec = this.data.classes[idx]
+    console.log('[photoError] idx=', idx, 'url=', rec && rec.photoUrl)
     const update = { [`classes[${idx}].hasPhoto`]: false }
     if (this.data.selectedIdx === idx) {
       update.selectedRecord = { ...this.data.selectedRecord, hasPhoto: false }
@@ -522,6 +524,28 @@ Page({
         console.error(err)
         wx.showToast({ title: '提交失败', icon: 'error' })
       })
+  },
+
+  _syncPhotos(classes) {
+    classes.forEach((cls, idx) => {
+      if (cls.hasPhoto) return
+      wx.request({
+        url: cls.photoUrl,
+        method: 'HEAD',
+        success: res => {
+          if (res.statusCode !== 200) return
+          const cur = this.data.classes[idx]
+          if (!cur || cur.id !== cls.id) return  // 日期已切换，忽略
+          this.setData({ [`classes[${idx}].hasPhoto`]: true })
+          if (this.data.selectedIdx === idx) {
+            this.setData({ selectedRecord: { ...this.data.selectedRecord, hasPhoto: true } })
+          }
+          apiPatch(this.data.apiUrl, cls.id, { photoUploaded: true })
+            .then(() => console.log('[syncPhoto] DB updated, id=', cls.id))
+            .catch(err => console.error('[syncPhoto] failed', err))
+        },
+      })
+    })
   },
 
   onSwitchHidden(e) {
