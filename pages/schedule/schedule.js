@@ -120,8 +120,6 @@ Page({
     inputName: '',
     wechatId: '',
     apiUrl: DEFAULT_API,
-    showApiModal: false,
-    inputApiUrl: '',
     showRefModal: false,
     refRecord: null,
     refMatchLevel: 0,
@@ -129,6 +127,9 @@ Page({
     refHistoricalCount: 0,
     showRemarkModal: false,
     inputRemark: '',
+    showHiddenItems: false,
+    showVisibilityModal: false,
+    inputHidden: false,
   },
 
   onLoad() {
@@ -206,6 +207,8 @@ Page({
           photoUrl: this._buildPhotoUrl(date, r.time, r.room),
           hasPhoto: !!r.photoUploaded,
           photoExpanded: false,
+          hidden: !!r.hidden,
+          _show: !r.hidden || this.data.showHiddenItems,
         }))
         const targetIdx = getScrollTargetIdx(classes)
         this.setData({
@@ -263,7 +266,7 @@ Page({
       _lastTapTime = 0
       _lastTapIdx  = -1
       const cur = this.data.classes[idx]
-      this.setData({ showRemarkModal: true, inputRemark: cur.remark || '', selectedIdx: idx, selectedRecord: cur })
+      this.setData({ showRemarkModal: true, inputRemark: cur.remark || '', inputHidden: cur.hidden, selectedIdx: idx, selectedRecord: cur })
       return
     }
     _lastTapTime = now
@@ -417,34 +420,6 @@ Page({
     })
   },
 
-  onShowApiModal() {
-    this.setData({ showApiModal: true, inputApiUrl: this.data.apiUrl })
-  },
-
-  onApiUrlInput(e) {
-    this.setData({ inputApiUrl: e.detail.value })
-  },
-
-  onCancelApiModal() {
-    this.setData({ showApiModal: false, inputApiUrl: '' })
-  },
-
-  onConfirmApiUrl() {
-    const url = this.data.inputApiUrl.trim().replace(/\/$/, '')
-    if (!url) {
-      wx.showToast({ title: '请输入API地址', icon: 'none' })
-      return
-    }
-    wx.setStorageSync('apiUrl', url)
-    this.setData({ apiUrl: url, showApiModal: false, inputApiUrl: '' })
-    wx.showToast({ title: '已更新', icon: 'success' })
-  },
-
-  onResetApiUrl() {
-    wx.setStorageSync('apiUrl', DEFAULT_API)
-    this.setData({ apiUrl: DEFAULT_API, inputApiUrl: DEFAULT_API })
-  },
-
   async onTapTotalStudentNum() {
     const rec = this.data.selectedRecord
     if (!rec) return
@@ -547,6 +522,39 @@ Page({
         console.error(err)
         wx.showToast({ title: '提交失败', icon: 'error' })
       })
+  },
+
+  onSwitchHidden(e) {
+    const hidden = e.detail.value
+    const rec = this.data.selectedRecord
+    this.setData({ inputHidden: hidden })
+    const showHiddenItems = this.data.showHiddenItems
+    apiPatch(this.data.apiUrl, rec.id, { hidden })
+      .then(() => {
+        const idx = this.data.selectedIdx
+        const classes = this.data.classes.map((c, i) =>
+          i === idx ? { ...c, hidden, _show: !hidden || showHiddenItems } : c
+        )
+        this.setData({ classes, selectedRecord: { ...rec, hidden } })
+      })
+      .catch(err => console.error('[switchHidden] failed', err))
+  },
+
+  onTapNickname() {
+    this.setData({ showVisibilityModal: true })
+  },
+
+  onCloseVisibilityModal() {
+    this.setData({ showVisibilityModal: false })
+  },
+
+  onToggleShowHidden(e) {
+    const showHiddenItems = e.detail.value
+    const classes = this.data.classes.map(c => ({
+      ...c,
+      _show: !c.hidden || showHiddenItems,
+    }))
+    this.setData({ showHiddenItems, classes })
   },
 
   onSyncFromRef() {

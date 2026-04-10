@@ -97,6 +97,7 @@ class UpdateBody(BaseModel):
     by:                    Optional[str]   = None
     photoUploaded:         Optional[bool]  = None
     remark:                Optional[str]   = None
+    hidden:                Optional[bool]  = None
 
 
 @app.patch('/records/{record_id}')

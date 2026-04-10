@@ -10,7 +10,7 @@
         </view>
       </picker>
     </view>
-    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onShowApiModal">{{wechatId}}</view>
+    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onTapNickname">{{wechatId}}</view>
   </view>
 
   <!-- 信息展示区 -->
@@ -27,7 +27,8 @@
           wx:for="{{classes}}"
           wx:key="index"
           id="item-{{index}}"
-          class="record-row {{selectedIdx === index ? 'row-selected' : ''}}"
+          class="record-row {{selectedIdx === index ? 'row-selected' : ''}} {{item.hidden ? 'row-hidden' : ''}}"
+          wx:if="{{item._show}}"
           bindtap="onSelectRow"
           data-idx="{{index}}"
         >
@@ -107,27 +108,6 @@
   </view>
 </view>
 
-<!-- API 设置弹窗 -->
-<view wx:if="{{showApiModal}}" class="modal-mask" bindtap="onCancelApiModal">
-  <view class="modal-box" catchtap="noop">
-    <text class="modal-title">API 地址设置</text>
-    <text class="modal-desc">预设：{{apiUrl}}</text>
-    <input
-      class="modal-input"
-      type="text"
-      placeholder="输入新的 API 地址"
-      focus="{{showApiModal}}"
-      bindinput="onApiUrlInput"
-      value="{{inputApiUrl}}"
-    />
-    <view class="modal-btns">
-      <view class="modal-cancel" bindtap="onResetApiUrl">重置</view>
-      <view class="modal-cancel" bindtap="onCancelApiModal">取消</view>
-      <view class="modal-confirm" bindtap="onConfirmApiUrl">确认</view>
-    </view>
-  </view>
-</view>
-
 <!-- 填写人数弹窗 -->
 <view wx:if="{{showInputModal}}" class="modal-mask" bindtap="onCancelInput">
   <view class="modal-box" catchtap="noop">
@@ -153,7 +133,13 @@
 <!-- Remark 编辑弹窗（双击触发）-->
 <view wx:if="{{showRemarkModal}}" class="modal-mask" bindtap="onCancelRemark">
   <view class="modal-box" catchtap="noop">
-    <text class="modal-title">编辑 Remark</text>
+    <view class="modal-header-row">
+      <text class="modal-title">编辑 Remark</text>
+      <view class="modal-hide-control">
+        <text class="modal-hide-label">隐藏</text>
+        <switch checked="{{inputHidden}}" bindchange="onSwitchHidden" color="rgb(20,53,130)" />
+      </view>
+    </view>
     <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
     <input
       class="modal-input"
@@ -166,6 +152,20 @@
     <view class="modal-btns">
       <view class="modal-cancel" bindtap="onCancelRemark">取消</view>
       <view class="modal-confirm" bindtap="onConfirmRemark">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 显示设置弹窗（点击用户名触发）-->
+<view wx:if="{{showVisibilityModal}}" class="modal-mask" bindtap="onCloseVisibilityModal">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">显示设置</text>
+    <view class="modal-setting-row">
+      <text class="modal-setting-label">显示已隐藏的课程</text>
+      <switch checked="{{showHiddenItems}}" bindchange="onToggleShowHidden" color="rgb(20,53,130)" />
+    </view>
+    <view class="modal-btns">
+      <view class="modal-confirm" bindtap="onCloseVisibilityModal">关闭</view>
     </view>
   </view>
 </view>
