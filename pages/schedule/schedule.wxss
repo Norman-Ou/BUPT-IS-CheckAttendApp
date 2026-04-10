@@ -246,6 +246,14 @@ page {
   color: #2e9e5b;
 }
 
+.row-filled-ruizhe {
+  color: rgb(147, 27, 17);
+}
+
+.photo-badge-ruizhe {
+  background: rgb(147, 27, 17);
+}
+
 /* ── Modal ── */
 .modal-mask {
   position: fixed;
