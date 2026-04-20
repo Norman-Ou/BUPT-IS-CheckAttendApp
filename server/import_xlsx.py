@@ -124,14 +124,13 @@ def import_xlsx(preserve: bool = False):
                 year       = n.year,
                 programme  = n.programme,
                 class_     = n.class_,
-                totalStudentNum = n.totalStudentNum,
-                remark     = n.remark
+                totalStudentNum = n.totalStudentNum
             FROM new_data n
             WHERE a.week=n.week AND a.day=n.day AND a.date=n.date
               AND a.time=n.time AND a.moduleCode=n.moduleCode
               AND a.moduleName=n.moduleName AND a.lecturer=n.lecturer
         """)
-        print('Static fields updated; mutable fields preserved.')
+        print('Static fields updated; mutable fields (remark, hidden, fill data) preserved.')
     else:
         con.execute("DROP TABLE IF EXISTS attend")
         con.execute("CREATE TABLE attend AS SELECT * FROM df")

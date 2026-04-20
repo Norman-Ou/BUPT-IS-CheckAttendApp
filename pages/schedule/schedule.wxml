@@ -135,10 +135,7 @@
   <view class="modal-box" catchtap="noop">
     <view class="modal-header-row">
       <text class="modal-title">编辑 Remark</text>
-      <view class="modal-hide-control">
-        <text class="modal-hide-label">隐藏</text>
-        <switch checked="{{inputHidden}}" bindchange="onSwitchHidden" color="rgb(20,53,130)" />
-      </view>
+      <view class="modal-edit-btn" bindtap="onOpenEditModal">编辑</view>
     </view>
     <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
     <input
@@ -152,6 +149,50 @@
     <view class="modal-btns">
       <view class="modal-cancel" bindtap="onCancelRemark">取消</view>
       <view class="modal-confirm" bindtap="onConfirmRemark">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 编辑记录弹窗 -->
+<view wx:if="{{showEditModal}}" class="modal-mask" bindtap="onCancelEdit">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">编辑记录</text>
+    <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
+    <text class="modal-desc">{{selectedRecord.time}} · {{selectedRecord.room}} · {{selectedRecord.lecturer}}</text>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">教室</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 LT1"
+        bindinput="onEditRoomInput"
+        value="{{editRoom}}"
+        focus="{{showEditModal}}"
+      />
+    </view>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">日期（D-Mon）</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 4-Mar"
+        bindinput="onEditDateInput"
+        value="{{editDate}}"
+      />
+    </view>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">时间（HH:MM-HH:MM）</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 08:00-09:35"
+        bindinput="onEditTimeInput"
+        value="{{editTime}}"
+      />
+    </view>
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onCancelEdit">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmEdit">确认</view>
     </view>
   </view>
 </view>
