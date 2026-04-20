@@ -98,8 +98,6 @@ class UpdateBody(BaseModel):
     photoUploaded:         Optional[bool]  = None
     remark:                Optional[str]   = None
     hidden:                Optional[bool]  = None
-    # editable via the "编辑记录" modal — corrects xlsx errors without re-import
-    totalStudentNum:       Optional[int]   = None
 
 
 @app.patch('/records/{record_id}')
@@ -117,31 +115,6 @@ def update_record(record_id: str, body: UpdateBody):
         con.execute(sql, values)
         row = con.execute('SELECT id, "studentNumInClassroom", "by" FROM attend WHERE id=?', [record_id]).fetchone()
     logger.info(f'[{now()}] [PATCH] after update: {row}')
-    return {'ok': True}
-
-
-# ── PATCH /records/{id}/attrs ──────────────────────────────────────
-class AttrsBody(BaseModel):
-    room: Optional[str] = None
-    date: Optional[str] = None   # "D-Mon" 格式，如 "4-Mar"
-    time: Optional[str] = None   # "HH:MM-HH:MM" 格式
-
-
-@app.patch('/records/{record_id}/attrs')
-def update_attrs(record_id: str, body: AttrsBody):
-    """Correct structural schedule attributes (room, date, time) without re-importing xlsx."""
-    updates = {k: v for k, v in body.model_dump().items() if v is not None}
-    if not updates:
-        return {'ok': True}
-
-    sets   = ', '.join(f'"{k}"=?' for k in updates)
-    values = list(updates.values()) + [record_id]
-    sql = f'UPDATE attend SET {sets} WHERE id=?'
-    logger.info(f'[{now()}] [PATCH attrs] id={record_id} updates={updates}')
-    with db_lock:
-        con.execute(sql, values)
-        row = con.execute('SELECT id, date, time, room FROM attend WHERE id=?', [record_id]).fetchone()
-    logger.info(f'[{now()}] [PATCH attrs] after update: {row}')
     return {'ok': True}
 
 
