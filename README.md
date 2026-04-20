@@ -1,71 +1,83 @@
-# 考勤小程序
+# Attendance Mini Program
 
-微信小程序 + Python 后端，用于课堂考勤数据的录入与管理。
+A WeChat Mini Program + Python backend for classroom attendance tracking and management.
 
-## 功能
+## Features
 
-- 按日期查看当日排课列表，自动定位到当前时段
-- 填写课堂实到人数，自动计算出勤率
-- 拍照或从相册上传课堂现场照片至阿里云 OSS
-- 数据持久化至 DuckDB，支持多人协作填写
+- View daily class schedule by date, auto-scrolled to the current time slot
+- Fill in headcount and auto-calculate attendance percentage
+- Upload classroom photos to Aliyun OSS (camera or photo library)
+- Edit record attributes (room, date, time) to correct scheduling errors
+- Double-tap a row to add remarks or hide/show records
+- Ref feature: look up historical records from the same lecturer/room with photos
+- Data persisted in DuckDB; supports concurrent filling by multiple users
 
-## 项目结构
+## Project Structure
 
 ```
 .
-├── app.js / app.json / app.wxss   # 小程序入口
-├── pages/schedule/                # 考勤主页面
+├── app.js / app.json / app.wxss   # Mini program entry
+├── pages/schedule/                # Main attendance page
 ├── utils/
-│   ├── util.js                    # 时间格式化工具
-│   └── hmac_sha1.js               # OSS 签名工具
-├── cloudfunctions/getOpenId/      # 云函数：获取用户 OpenID
+│   ├── util.js                    # Date formatting helper
+│   └── hmac_sha1.js               # OSS request signing (HMAC-SHA1)
+├── data/schedule.js               # Static schedule data
 ├── server/
-│   ├── main.py                    # FastAPI 后端服务
-│   ├── import_xlsx.py             # xlsx 导入脚本
-│   ├── export_xlsx.py             # 数据导出脚本
+│   ├── main.py                    # FastAPI backend (port 17800)
+│   ├── import_xlsx.py             # Import schedule from Excel → DuckDB
+│   ├── export_xlsx.py             # Export DuckDB → Excel
 │   └── requirements.txt
-├── tools/xlsx_to_csv.py           # xlsx 转 csv 工具
-└── attendance.xlsx                # 排课数据源
+├── tools/xlsx_to_csv.py           # Excel to CSV conversion tool
+└── attendance.xlsx                # Source schedule spreadsheet
 ```
 
-## 快速开始
+## Getting Started
 
-### 小程序
+### Mini Program
 
-使用**微信开发者工具**打开项目根目录，AppID 为 `wx76e796f05cef368a`。
+Open the project root in **WeChat Developer Tools**. AppID: `wx76e796f05cef368a`.
 
-### 后端服务
+### Backend
 
 ```bash
 cd server
 pip install -r requirements.txt
 
-# 首次导入排课数据
+# Import schedule data for the first time
 python import_xlsx.py
 
-# 启动 API 服务（监听 0.0.0.0:8000）
+# Start the API server (listens on 127.0.0.1:17800)
 python main.py
 ```
 
-使用 [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) 将本地服务暴露为公网 URL，并将 URL 更新至 `pages/schedule/schedule.js` 顶部的 `API` 常量。
+Expose the local server via [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) and set the resulting URL as the API base in the mini program's settings (or via the in-app URL config).
 
-## 后端 API
+## API Endpoints
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | `/dates` | 获取所有排课日期 |
-| GET | `/records?date=4-Mar` | 获取指定日期的排课记录 |
-| PATCH | `/records/{id}` | 更新实到人数、出勤率、照片状态 |
-| GET | `/health` | 健康检查 |
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/dates` | All distinct dates with day names |
+| GET | `/records?date=4-Mar` | All records for a given date |
+| PATCH | `/records/{id}` | Update headcount, percentage, photo status, remark, visibility |
+| PATCH | `/records/{id}/attrs` | Correct structural attributes (room, date, time) |
+| GET | `/health` | Record count health check |
 
-## 更新排课数据
+## Updating Schedule Data
 
-替换根目录下的 `attendance.xlsx`，然后重新导入：
+Replace `attendance.xlsx` in the project root, then re-import:
 
 ```bash
-# 完全重置（清空已填写数据）
+# Full reset — drops and recreates the table (clears all filled data)
 python server/import_xlsx.py
 
-# 仅更新静态字段，保留已填写数据
+# Preserve filled data — updates only static schedule fields
 python server/import_xlsx.py --preserve
+```
+
+## Exporting Data
+
+```bash
+python server/export_xlsx.py                        # all records
+python server/export_xlsx.py --out /path/out.xlsx   # custom output path
+python server/export_xlsx.py --filled-only          # only filled rows
 ```
