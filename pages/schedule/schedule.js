@@ -98,10 +98,25 @@ function apiPatch(apiUrl, id, data) {
   })
 }
 
+// PATCH /records/{id}/attrs
+function apiAttrs(apiUrl, id, data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${apiUrl}/records/${id}/attrs`,
+      method: 'PATCH',
+      data,
+      header: { 'Content-Type': 'application/json' },
+      success: res => (res.statusCode === 200 ? resolve(res.data) : reject(res)),
+      fail: reject,
+    })
+  })
+}
+
 // ── Page ───────────────────────────────────────────────────────────
 
 let _lastTapTime     = 0
 let _lastTapIdx      = -1
+let _nickTapTimer    = null
 
 Page({
   data: {
@@ -129,7 +144,10 @@ Page({
     inputRemark: '',
     showHiddenItems: false,
     showVisibilityModal: false,
-    inputHidden: false,
+    showEditModal: false,
+    editRoom: '',
+    editDate: '',
+    editTime: '',
   },
 
   onLoad() {
@@ -268,7 +286,7 @@ Page({
       _lastTapTime = 0
       _lastTapIdx  = -1
       const cur = this.data.classes[idx]
-      this.setData({ showRemarkModal: true, inputRemark: cur.remark || '', inputHidden: cur.hidden, selectedIdx: idx, selectedRecord: cur })
+      this.setData({ showRemarkModal: true, inputRemark: cur.remark || '', selectedIdx: idx, selectedRecord: cur })
       return
     }
     _lastTapTime = now
@@ -548,24 +566,90 @@ Page({
     })
   },
 
-  onSwitchHidden(e) {
-    const hidden = e.detail.value
+  onOpenEditModal() {
     const rec = this.data.selectedRecord
-    this.setData({ inputHidden: hidden })
-    const showHiddenItems = this.data.showHiddenItems
-    apiPatch(this.data.apiUrl, rec.id, { hidden })
+    this.setData({
+      showRemarkModal: false,
+      showEditModal: true,
+      editRoom: rec.room || '',
+      editDate: this.data.dateRaw[this.data.dateIndex].date,
+      editTime: rec.time || '',
+    })
+  },
+
+  onEditRoomInput(e) {
+    this.setData({ editRoom: e.detail.value })
+  },
+
+  onEditDateInput(e) {
+    this.setData({ editDate: e.detail.value })
+  },
+
+  onEditTimeInput(e) {
+    this.setData({ editTime: e.detail.value })
+  },
+
+  onCancelEdit() {
+    this.setData({ showEditModal: false, editRoom: '', editDate: '', editTime: '' })
+  },
+
+  onConfirmEdit() {
+    const rec = this.data.selectedRecord
+    const newRoom = this.data.editRoom.trim()
+    const newDate = this.data.editDate.trim()
+    const newTime = this.data.editTime.trim()
+
+    const patch = {}
+    if (newRoom && newRoom !== rec.room) patch.room = newRoom
+    if (newDate && newDate !== this.data.dateRaw[this.data.dateIndex].date) patch.date = newDate
+    if (newTime && newTime !== rec.time) patch.time = newTime
+
+    if (!Object.keys(patch).length) {
+      this.setData({ showEditModal: false, editRoom: '', editDate: '', editTime: '' })
+      return
+    }
+
+    wx.showLoading({ title: '提交中...' })
+    apiAttrs(this.data.apiUrl, rec.id, patch)
       .then(() => {
+        wx.hideLoading()
         const idx = this.data.selectedIdx
-        const classes = this.data.classes.map((c, i) =>
-          i === idx ? { ...c, hidden, _show: !hidden || showHiddenItems } : c
-        )
-        this.setData({ classes, selectedRecord: { ...rec, hidden } })
+        const room = patch.room || rec.room
+        const time = patch.time || rec.time
+        const date = patch.date || this.data.dateRaw[this.data.dateIndex].date
+        const photoUrl = this._buildPhotoUrl(date, time, room)
+        const updated = { ...rec, room, time, photoUrl }
+        const classes = this.data.classes.map((c, i) => i === idx ? { ...c, room, time, photoUrl } : c)
+        this.setData({
+          classes,
+          selectedRecord: updated,
+          showEditModal: false,
+          editRoom: '',
+          editDate: '',
+          editTime: '',
+        })
+        wx.showToast({ title: '已更新', icon: 'success' })
+        if (patch.date) this.onQuery()
       })
-      .catch(err => console.error('[switchHidden] failed', err))
+      .catch(err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '提交失败', icon: 'error' })
+      })
   },
 
   onTapNickname() {
-    this.setData({ showVisibilityModal: true })
+    if (_nickTapTimer) {
+      clearTimeout(_nickTapTimer)
+      _nickTapTimer = null
+      this.onQuery()
+      wx.showToast({ title: '刷新中', icon: 'loading', duration: 1000 })
+      return
+    }
+    _nickTapTimer = setTimeout(() => {
+      _nickTapTimer = null
+      this.setData({ showVisibilityModal: true })
+    }, 300)
   },
 
   onReLogin() {

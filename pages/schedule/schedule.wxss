@@ -372,14 +372,19 @@ page {
   margin-bottom: 0;
 }
 
-.modal-hide-control {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4rpx;
+.modal-edit-btn {
+  font-size: 24rpx;
+  color: #fff;
+  background: rgb(20, 53, 130);
+  border-radius: 20rpx;
+  padding: 6rpx 20rpx;
 }
 
-.modal-hide-label {
+.modal-edit-field {
+  margin-top: 20rpx;
+}
+
+.modal-edit-field-label {
   font-size: 26rpx;
   color: #888;
 }
