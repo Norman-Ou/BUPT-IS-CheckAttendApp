@@ -1,5 +1,5 @@
 // schedule.js
-const DEFAULT_API = 'https://advertisements-children-tan-attempts.trycloudflare.com'
+const DEFAULT_API = 'https://runtime-addition-obviously-editors.trycloudflare.com'
 
 const { hmacSha1Base64 } = require('../../utils/hmac_sha1')
 const OSS_BUCKET     = 'us-aisocial'
