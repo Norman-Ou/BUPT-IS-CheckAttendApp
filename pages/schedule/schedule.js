@@ -164,7 +164,11 @@ Page({
         const dateList = dateRaw.map(d => `${d.date} ${d.day}`)
         const today = getTodayStr()
         let dateIndex = dateRaw.findIndex(d => d.date === today)
-        if (dateIndex === -1) dateIndex = 0
+        if (dateIndex === -1) {
+          const todayKey = dateKey(today)
+          const nextIdx = dateRaw.findIndex(d => dateKey(d.date) > todayKey)
+          dateIndex = nextIdx !== -1 ? nextIdx : Math.max(0, dateRaw.length - 1)
+        }
         const entry = dateRaw[dateIndex]
         this.setData({
           dateRaw, dateList, dateIndex,
