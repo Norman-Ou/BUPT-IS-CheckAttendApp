@@ -524,6 +524,27 @@ Page({
     this.setData({ showRemarkModal: false, inputRemark: '' })
   },
 
+  onHideRecord() {
+    const rec = this.data.selectedRecord
+    const idx = this.data.selectedIdx
+    wx.showLoading({ title: '提交中...' })
+    apiPatch(this.data.apiUrl, rec.id, { hidden: true })
+      .then(() => {
+        wx.hideLoading()
+        const showHiddenItems = this.data.showHiddenItems
+        const classes = this.data.classes.map((c, i) =>
+          i === idx ? { ...c, hidden: true, _show: !!showHiddenItems } : c
+        )
+        this.setData({ classes, showRemarkModal: false, inputRemark: '' })
+        wx.showToast({ title: '已隐藏', icon: 'success' })
+      })
+      .catch(err => {
+        wx.hideLoading()
+        console.error(err)
+        wx.showToast({ title: '操作失败', icon: 'error' })
+      })
+  },
+
   onConfirmRemark() {
     const remark = this.data.inputRemark.trim()
     const rec = this.data.selectedRecord

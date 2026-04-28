@@ -314,6 +314,17 @@ page {
   color: #666;
 }
 
+.modal-hide {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: #e53935;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
 .modal-confirm {
   flex: 1;
   text-align: center;

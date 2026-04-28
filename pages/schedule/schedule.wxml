@@ -147,7 +147,7 @@
       focus="{{showRemarkModal}}"
     />
     <view class="modal-btns">
-      <view class="modal-cancel" bindtap="onCancelRemark">取消</view>
+      <view class="modal-hide" bindtap="onHideRecord">隐藏</view>
       <view class="modal-confirm" bindtap="onConfirmRemark">确认</view>
     </view>
   </view>
