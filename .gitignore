@@ -1,0 +1,37 @@
+*.log
+
+# Local environment and generated config
+.env
+server/.env
+config.local.js
+project.private.config.json
+
+# Local IDE / agent state
+.claude/
+server/.claude/
+.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local databases
+server/data/
+*.duckdb
+*.duckdb.*
+*.db
+*.sqlite
+*.sqlite3
+
+# Attendance source, exports, and preprocessing artifacts
+*.xlsx
+*.xls
+*.csv
+*.ipynb
+attendance.xlsx
+schedule.json
+data/schedule.js
+server/attend_preprocess/
+server/*export*.xlsx
+server/sheet.xlsx
+server/temp.xlsx

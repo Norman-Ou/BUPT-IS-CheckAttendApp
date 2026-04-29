@@ -1,0 +1,235 @@
+<!--schedule.wxml-->
+<view class="page-wrap">
+
+  <!-- 顶部日期选择 + 头像 -->
+  <view class="action-bar">
+    <view class="picker-wrap" bindlongpress="onPickerLongPress">
+      <picker style="width:100%;display:block;" range="{{dateList}}" value="{{dateIndex}}" bindchange="onDateChange">
+        <view class="btn btn-red">
+          <text class="btn-text">{{displayDate}}</text>
+        </view>
+      </picker>
+    </view>
+    <view wx:if="{{wechatId}}" class="nickname-chip" bindtap="onTapNickname">{{wechatId}}</view>
+  </view>
+
+  <!-- 信息展示区 -->
+  <view class="info-wrap">
+    <scroll-view
+      class="info-area"
+      scroll-y
+      type="list"
+      scroll-into-view="{{scrollIntoView}}"
+      scroll-with-animation
+    >
+      <block wx:if="{{hasResult}}">
+        <view
+          wx:for="{{classes}}"
+          wx:key="index"
+          id="item-{{index}}"
+          class="record-row {{selectedIdx === index ? 'row-selected' : ''}} {{item.hidden ? 'row-hidden' : ''}}"
+          wx:if="{{item._show}}"
+          bindtap="onSelectRow"
+          data-idx="{{index}}"
+        >
+          <view class="row-top">
+            <text class="row-index">{{item.index}}</text>
+            <text class="row-module">
+              <text class="row-code {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.moduleCode}}</text> {{item.module}}
+            </text>
+            <view wx:if="{{item.hasPhoto === true}}" class="photo-badge {{item.by === 'Ruizhe' ? 'photo-badge-ruizhe' : ''}}">已传图</view>
+          </view>
+          <view class="row-bottom">
+            <text class="row-time">{{item.time}}</text>
+            <text class="row-lecturer">{{item.lecturer}}</text>
+            <text class="row-room {{item.remark === 'Tutorial' ? 'tutorial' : ''}}">{{item.room}}</text>
+            <view wx:if="{{item.by}}" class="row-operator">
+              <text class="row-filled {{item.by === 'Ruizhe' ? 'row-filled-ruizhe' : ''}}">{{item.studentNumInClassroom}}/{{item.totalStudentNum}} {{item.percent}}%</text>
+            </view>
+          </view>
+          <!-- 隐藏的 image：始终发请求，双向同步 DB 的 photoUploaded 状态 -->
+          <image
+            class="thumb-invisible"
+            src="{{item.photoUrl}}"
+            bindload="onPhotoLoad"
+            binderror="onPhotoError"
+            data-idx="{{index}}"
+          />
+          <!-- 展开的照片预览（点击放大并收起） -->
+          <view
+            wx:if="{{item.photoExpanded && item.hasPhoto}}"
+            class="photo-preview-wrap"
+            catchtap="onPreviewPhoto"
+            data-idx="{{index}}"
+          >
+            <image class="photo-thumb" src="{{item.photoUrl}}" mode="widthFix" lazy-load />
+          </view>
+        </view>
+      </block>
+
+      <view wx:else class="info-placeholder">
+        <text class="placeholder-text">信息展示</text>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="action-bar bottom-bar">
+    <view class="btn btn-gray" bindtap="onTapTotalStudentNum">
+      <text class="btn-label">应到人数</text>
+      <text class="btn-num">{{selectedRecord ? selectedRecord.totalStudentNum : '-'}}</text>
+    </view>
+    <view class="btn btn-red {{selectedRecord && selectedRecord.by ? 'btn-done' : ''}}" bindtap="onFillCount">
+      <text class="btn-text">填写人数</text>
+    </view>
+    <view class="btn btn-red {{selectedRecord && selectedRecord.hasPhoto ? 'btn-done' : ''}}" bindtap="onUploadPhoto">
+      <text class="btn-text">上传照片</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 登录弹窗 -->
+<view wx:if="{{showLoginModal}}" class="modal-mask">
+  <view class="modal-box">
+    <text class="modal-title">请输入用户名</text>
+    <input
+      class="modal-input"
+      type="text"
+      placeholder="Ruizhe / Shuyue"
+      focus="{{showLoginModal}}"
+      bindinput="onNameInput"
+      value="{{inputName}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-confirm" bindtap="onConfirmName">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 填写人数弹窗 -->
+<view wx:if="{{showInputModal}}" class="modal-mask" bindtap="onCancelInput">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">填写实到人数</text>
+    <text class="modal-desc">{{selectedRecord.module}}</text>
+    <text wx:if="{{syncFromRef}}" class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人-历史 {{refHistoricalCount}} 人</text>
+    <text wx:else class="modal-desc">{{selectedRecord.room}} · 应到 {{selectedRecord.totalStudentNum}} 人</text>
+    <input
+      class="modal-input"
+      type="number"
+      placeholder="请输入实到人数"
+      bindinput="onCountInput"
+      value="{{inputCount}}"
+      focus="{{showInputModal}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onCancelInput">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmInput">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- Remark 编辑弹窗（双击触发）-->
+<view wx:if="{{showRemarkModal}}" class="modal-mask" bindtap="onCancelRemark">
+  <view class="modal-box" catchtap="noop">
+    <view class="modal-header-row">
+      <text class="modal-title">编辑 Remark</text>
+      <view class="modal-edit-btn" bindtap="onOpenEditModal">编辑</view>
+    </view>
+    <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
+    <input
+      class="modal-input"
+      type="text"
+      placeholder="输入 Remark（如 Tutorial）"
+      bindinput="onRemarkInput"
+      value="{{inputRemark}}"
+      focus="{{showRemarkModal}}"
+    />
+    <view class="modal-btns">
+      <view class="modal-hide" bindtap="onHideRecord">隐藏</view>
+      <view class="modal-confirm" bindtap="onConfirmRemark">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 编辑记录弹窗 -->
+<view wx:if="{{showEditModal}}" class="modal-mask" bindtap="onCancelEdit">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">编辑记录</text>
+    <text class="modal-desc">{{selectedRecord.moduleCode}} {{selectedRecord.module}}</text>
+    <text class="modal-desc">{{selectedRecord.time}} · {{selectedRecord.room}} · {{selectedRecord.lecturer}}</text>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">教室</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 LT1"
+        bindinput="onEditRoomInput"
+        value="{{editRoom}}"
+        focus="{{showEditModal}}"
+      />
+    </view>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">日期（D-Mon）</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 4-Mar"
+        bindinput="onEditDateInput"
+        value="{{editDate}}"
+      />
+    </view>
+    <view class="modal-edit-field">
+      <text class="modal-edit-field-label">时间（HH:MM-HH:MM）</text>
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="如 08:00-09:35"
+        bindinput="onEditTimeInput"
+        value="{{editTime}}"
+      />
+    </view>
+    <view class="modal-btns">
+      <view class="modal-cancel" bindtap="onCancelEdit">取消</view>
+      <view class="modal-confirm" bindtap="onConfirmEdit">确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 显示设置弹窗（点击用户名触发）-->
+<view wx:if="{{showVisibilityModal}}" class="modal-mask" bindtap="onCloseVisibilityModal">
+  <view class="modal-box" catchtap="noop">
+    <view class="modal-header-row">
+      <text class="modal-title">显示设置</text>
+      <view class="modal-relogin-btn" bindtap="onReLogin">切换用户</view>
+    </view>
+    <view class="modal-setting-row">
+      <text class="modal-setting-label">显示已隐藏的课程</text>
+      <switch checked="{{showHiddenItems}}" bindchange="onToggleShowHidden" color="rgb(20,53,130)" />
+    </view>
+    <view class="modal-btns">
+      <view class="modal-confirm" bindtap="onCloseVisibilityModal">关闭</view>
+    </view>
+  </view>
+</view>
+
+<!-- 历史参考记录弹窗 -->
+<view wx:if="{{showRefModal}}" class="modal-mask" bindtap="onCloseRefModal">
+  <view class="modal-box" catchtap="noop">
+    <text class="modal-title">历史参考记录</text>
+    <text class="modal-desc">Index：{{refRecord.indexNo}}　日期：{{refRecord.date}}</text>
+    <text class="modal-desc">{{refRecord.moduleCode}} {{refRecord.moduleName}}</text>
+    <text class="modal-desc">{{refRecord.lecturer}}　{{refRecord.room}}</text>
+    <text class="modal-desc">实到：{{refRecord.studentNumInClassroom}} / {{refRecord.totalStudentNum}} 人</text>
+    <image class="ref-photo" src="{{refRecord.photoUrl}}" mode="widthFix" />
+    <text wx:if="{{refMatchLevel === 2}}" class="modal-desc modal-hint">（已放宽：不限应到人数）</text>
+    <text wx:if="{{refMatchLevel === 3}}" class="modal-desc modal-hint">（已放宽：不限应到人数和教室）</text>
+    <text class="modal-nav-idx">{{refMatchIdx + 1}} / {{refMatches.length}}</text>
+    <view class="modal-btns">
+      <view class="modal-nav-btn" bindtap="onRefPrev">↑</view>
+      <view class="modal-nav-btn" bindtap="onRefNext">↓</view>
+      <view class="modal-confirm modal-confirm-wide" bindtap="onSyncFromRef">同步</view>
+    </view>
+  </view>
+</view>
