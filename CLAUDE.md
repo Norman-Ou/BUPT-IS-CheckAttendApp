@@ -30,9 +30,6 @@ This is a **WeChat Mini Program** (微信小程序) for attendance tracking. The
 **Data:**
 - Schedule spreadsheets, generated schedule JSON/JS, exports, notebooks, DuckDB files, and local config are ignored and must not be committed.
 
-**Cloud functions:**
-- `cloudfunctions/getOpenId/` — WeChat cloud function to fetch OpenID (currently unused)
-
 ## Schedule Page (`pages/schedule/`)
 
 The main attendance tracking page. Key behaviors:
