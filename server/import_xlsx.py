@@ -24,8 +24,10 @@ def make_id(week, day, date, time, room, moduleCode, moduleName, lecturer) -> st
 XLSX_PATH = SERVER_IMPORT_XLSX_PATH
 DB_PATH   = SERVER_DB_PATH
 
-# Extra columns added by export_xlsx.py that should be ignored on re-import
-EXPORT_ONLY_COLS = ['Unnamed: 0', 'Student Num In Classroom', 'Percent (%)']
+# Extra columns that should be ignored on import (only the xlsx-generated index column).
+# Mutable fields (studentNumInClassroom / percent / by) are preserved via the rename map below
+# so the first import of an export-format xlsx carries existing fill data into the DB.
+EXPORT_ONLY_COLS = ['Unnamed: 0']
 
 
 def import_xlsx(preserve: bool = False):
@@ -42,6 +44,8 @@ def import_xlsx(preserve: bool = False):
     df = df.drop(columns=[c for c in EXPORT_ONLY_COLS if c in df.columns])
 
     # ── Column rename ──────────────────────────────────────────────
+    # Accept both raw-schedule and export-format column names so that
+    # `import_xlsx.py` works on either.
     df = df.rename(columns={
         'Index No.':                  'indexNo',
         'Week':                       'week',
@@ -55,10 +59,15 @@ def import_xlsx(preserve: bool = False):
         'Year':                       'year',
         'Programme':                  'programme',
         'Class':                      'class_',
+        # Raw-schedule and export-format names both map to the same canonical name.
         'Total student num':          'totalStudentNum',
+        'Total Student Num':          'totalStudentNum',
         'Student number in classroom':'studentNumInClassroom',
+        'Student Num In Classroom':   'studentNumInClassroom',
         'Percent':                    'percent',
+        'Percent (%)':                'percent',
         'By':                         'by',
+        'Filled By':                  'by',
         'Remark':                     'remark',
         'ID':                         'id',
     })

@@ -5,27 +5,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (uv-managed; deps in pyproject.toml)
+uv sync --package bupt-attend-server
 
 # Generate local config from .env
 cd ..
-python scripts/setup_config.py
+uv run python scripts/setup_config.py
 cd server
 
 # Import Excel data into DuckDB (drops and recreates the table)
-python import_xlsx.py
+uv run python import_xlsx.py
 
 # Import while preserving existing mutable fill data
-python import_xlsx.py --preserve
+uv run python import_xlsx.py --preserve
 
 # Start the API server (runs on http://127.0.0.1:17800)
-python main.py
+uv run python main.py
 
 # Export DuckDB back to Excel
-python export_xlsx.py
-python export_xlsx.py --out /path/to/output.xlsx
-python export_xlsx.py --filled-only   # only rows where data was filled in
+uv run python export_xlsx.py
+uv run python export_xlsx.py --out /path/to/output.xlsx
+uv run python export_xlsx.py --filled-only   # only rows where data was filled in
 ```
 
 ## Architecture
