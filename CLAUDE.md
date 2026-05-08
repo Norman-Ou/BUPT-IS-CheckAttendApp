@@ -54,6 +54,40 @@ See `server/CLAUDE.md` for full details. Summary:
 
 - FastAPI + DuckDB attendance API running locally, exposed via Cloudflare tunnel
 - `GET /dates`, `GET /records?date=`, `PATCH /records/{id}`
-- Import from Excel: `python import_xlsx.py [--preserve]`
-- Start server: `python main.py` (port 17800)
-- Export to Excel: `python export_xlsx.py`
+- Import from Excel: `uv run python import_xlsx.py [--preserve]`
+- Start server: `uv run python main.py` (port 17800) — or use `./start_server.sh`
+- Export to Excel: `uv run python export_xlsx.py`
+- Environment: managed by `uv`; deps in `server/pyproject.toml` (Python 3.14, pinned `==`)
+
+## Backend startup ("启动")
+
+When the user says **"启动"** (or "start the server" / "run the server"), follow this procedure end-to-end. Do NOT skip the confirmation step.
+
+**1. Read project-root `.env` and confirm key values with the user.**
+
+Display the current values for these keys (one block, monospaced) and ask the user to confirm or override:
+
+- `SERVER_HOST`, `SERVER_PORT` — bind address
+- `SERVER_DB_PATH` — DuckDB file location
+- `SERVER_IMPORT_XLSX`, `SERVER_UPDATE_XLSX` — initial-import source. If `SERVER_IMPORT_XLSX` is empty, `start_server.sh` falls back to `SERVER_UPDATE_XLSX` to create the DB.
+- `OSS_BUCKET`, `OSS_PREFIX` — photo destination
+
+**Do NOT print `OSS_ACCESS_KEY_ID` / `OSS_ACCESS_KEY_SECRET`** — confirm only that they are set (non-empty), nothing more.
+
+If the user wants to change anything, edit `.env` first.
+
+**2. Regenerate downstream config from `.env`:**
+
+```bash
+uv run --package bupt-attend-server python scripts/setup_config.py
+```
+
+This rewrites `server/.env`, `config.local.js`, and `project.private.config.json`. Project-root `.env` is the only source of truth.
+
+**3. Launch the server:**
+
+```bash
+./start_server.sh
+```
+
+Run it in the foreground. The script (a) sources `.env`, (b) `uv sync`s the env, (c) auto-creates the DuckDB from xlsx if missing, (d) `exec`s `uv run python main.py`.
